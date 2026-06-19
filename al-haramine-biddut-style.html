@@ -1,582 +1,1225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al Haramine Printing & Packaging | Premium Label, Hangtag & Carton Press — Rajshahi</title>
-<meta name="description" content="Al Haramine Printing & Packaging — Bangladesh's trusted label, hangtag, carton and stationery press based in Mohammadpur, Rajshahi. CMYK printing, in-house die-cutting and finishing.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Al Haramine Printing & Packaging | Premium Label, Hangtag & Carton Press —
+      Rajshahi
+    </title>
+    <meta
+      name="description"
+      content="Al Haramine Printing & Packaging — Bangladesh's trusted label, hangtag, carton and stationery press based in Mohammadpur, Rajshahi. CMYK printing, in-house die-cutting and finishing."
+    />
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-  :root{
-    --bg:#0A0D14;
-    --bg-2:#0E121B;
-    --card:#151A26;
-    --card-2:#1A2030;
-    --line:rgba(255,255,255,.08);
-    --text:#F4F5F7;
-    --muted:#9AA1AE;
-    --magenta:#E31C82;
-    --gold:#F5A623;
-    --cyan:#00A7CE;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;}
-  .font-head{font-family:'Poppins',sans-serif;}
-  .font-bn{font-family:'Noto Sans Bengali',sans-serif;}
-
-  .grad-text{
-    background:linear-gradient(90deg, var(--magenta), var(--gold), var(--cyan));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .grad-bar{background:linear-gradient(90deg, var(--magenta), var(--gold), var(--cyan));}
-  .grad-btn{background:linear-gradient(90deg, var(--magenta), var(--gold));}
-  .grad-btn:hover{background:linear-gradient(90deg, var(--gold), var(--magenta));}
-
-  /* halftone texture for hero (printing motif, replaces stock photo) */
-  .halftone{
-    background-image:
-      radial-gradient(rgba(227,28,130,.35) 1px, transparent 1.4px),
-      radial-gradient(rgba(0,167,206,.30) 1px, transparent 1.4px);
-    background-size:14px 14px, 14px 14px;
-    background-position:0 0, 7px 7px;
-  }
-  .hero-bg{
-    background:
-      radial-gradient(ellipse at 20% 15%, rgba(227,28,130,.22), transparent 55%),
-      radial-gradient(ellipse at 85% 10%, rgba(0,167,206,.20), transparent 50%),
-      radial-gradient(ellipse at 60% 90%, rgba(245,166,35,.14), transparent 55%),
-      linear-gradient(180deg, #0A0D14 0%, #0A0D14 100%);
-  }
-
-  .reg-mark{position:relative; width:1em; height:1em; display:inline-block;}
-  .reg-mark::before,.reg-mark::after{content:"";position:absolute;background:currentColor;}
-  .reg-mark::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%);}
-  .reg-mark::after{top:50%;left:0;right:0;height:1px;transform:translateY(-50%);}
-
-  .tag-shape{ clip-path: path('M0,40 C0,17 20,0 50,0 C80,0 100,17 100,40 L100,260 L0,260 Z'); }
-
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  ::selection{background:var(--magenta); color:#fff;}
-
-  .card-hover{transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease;}
-  .card-hover:hover{transform:translateY(-6px); border-color:rgba(245,166,35,.4);}
-
-  input:focus, textarea:focus, select:focus, button:focus-visible, a:focus-visible{
-    outline:2px solid var(--gold); outline-offset:2px;
-  }
-
-  .dots{display:flex; gap:6px; justify-content:center;}
-  .dots span{width:7px; height:7px; border-radius:999px; background:rgba(255,255,255,.18);}
-  .dots span.active{background:var(--gold); width:22px; border-radius:999px;}
-
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-  }
-</style>
-</head>
-<body class="antialiased">
-
-<!-- ============ NAV ============ -->
-<header class="fixed top-0 inset-x-0 z-40 bg-[#0A0D14]/85 backdrop-blur border-b border-white/5">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2.5">
-      <img src="data:image/png;base64,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" alt="Al Haramine logo" class="h-8 md:h-9 w-auto rounded bg-white/5 p-0.5">
-      <span class="font-head font-bold text-[15.5px] md:text-[17px] leading-none">
-        AL HARAMINE <span class="grad-text">PRINTING</span>
-      </span>
-    </a>
-    <nav class="hidden md:flex items-center gap-7 font-medium text-[14px] text-white/80">
-      <a href="#top" class="hover:text-white transition-colors">Home</a>
-      <a href="#about" class="hover:text-white transition-colors">About</a>
-      <a href="#products" class="hover:text-white transition-colors">Products</a>
-      <a href="#why" class="hover:text-white transition-colors">Why Us</a>
-      <a href="#contact" class="px-4 py-2 rounded-full border border-white/20 hover:border-white/50 transition-colors">Contact</a>
-      <a href="#quote" class="px-4 py-2 rounded-full grad-btn text-[#1a0a12] font-semibold transition-colors">Get Quote</a>
-    </nav>
-    <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="md:hidden w-10 h-10 grid place-items-center text-white">
-      <span class="reg-mark text-[22px]"></span>
-    </button>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-[#0A0D14] px-5 py-4 space-y-3 font-medium text-white/85">
-    <a href="#top" class="block">Home</a>
-    <a href="#about" class="block">About</a>
-    <a href="#products" class="block">Products</a>
-    <a href="#why" class="block">Why Us</a>
-    <a href="#contact" class="block">Contact</a>
-    <a href="#quote" class="block font-semibold grad-text">Get Quote →</a>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section id="top" class="relative pt-28 md:pt-36 pb-0 hero-bg overflow-hidden">
-  <div class="absolute inset-0 halftone opacity-40"></div>
-  <div class="max-w-4xl mx-auto px-5 text-center relative">
-    <span class="reveal in inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 text-[12.5px] font-medium text-[var(--gold)] mb-7">
-      <span class="reg-mark text-[12px]"></span> Bangladesh's Trusted Printing &amp; Packaging Partner
-    </span>
-
-    <h1 class="font-head font-extrabold leading-[1.02] text-[13vw] sm:text-[58px] md:text-[68px]">
-      <span class="block text-white">AL HARAMINE</span>
-      <span class="block grad-text">PRINTING &amp; PACKAGING</span>
-    </h1>
-
-    <p class="mt-6 text-white/70 text-[15.5px] md:text-[17px] max-w-2xl mx-auto leading-relaxed">
-      Premium labels, hangtags, cartons &amp; stationery printing — custom designed and bulk
-      manufactured with precise CMYK colour and in-house finishing.
-    </p>
-    <p class="font-bn text-white/55 text-[14.5px] mt-2">মোহাম্মদপুর, রাজশাহী থেকে সারাদেশে সরবরাহ</p>
-
-    <p class="mt-4 text-[13px] text-white/45 flex items-center justify-center gap-1.5">
-      <span class="reg-mark text-[12px] text-[var(--gold)]"></span> Mohammadpur, Rajshahi, Bangladesh
-    </p>
-
-    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 pb-16 md:pb-24">
-      <a href="#quote" class="px-7 py-3.5 rounded-full grad-btn text-[#1a0a12] font-semibold transition-colors">Get Free Quote →</a>
-      <a href="#products" class="px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:border-white/60 transition-colors">View Products</a>
-    </div>
-  </div>
-
-  <!-- stats bar -->
-  <div class="grad-bar relative">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div>
-        <div class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]">12,00,000+</div>
-        <div class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5">Labels &amp; Tags Printed</div>
-      </div>
-      <div>
-        <div class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]">300+</div>
-        <div class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5">Happy Clients</div>
-      </div>
-      <div>
-        <div class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]">26+</div>
-        <div class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5">Years of Experience</div>
-      </div>
-      <div>
-        <div class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]">48 hrs</div>
-        <div class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5">Fast Turnaround</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section id="about" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-start">
-    <div class="reveal">
-      <p class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3">About Us</p>
-      <h2 class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight">
-        Crafting Precision <span class="grad-text block">Since Day One</span>
-      </h2>
-
-      <p class="mt-6 text-[15px] text-white/75 leading-relaxed">
-        <span class="font-semibold text-white">Al Haramine Printing &amp; Packaging</span> is a leading
-        press based in Mohammadpur, Rajshahi, specializing in premium labels, hangtags, cartons and
-        agro-product packaging. Built on accurate colour, sharp die-cutting and on-time delivery, our
-        press serves agro-chemical, FMCG and consumer brands across Bangladesh.
-      </p>
-      <p class="mt-4 text-[15px] text-white/75 leading-relaxed">
-        From colour separation to die-cutting, every job is proofed in-house before the full run —
-        so what you approve is exactly what ships.
-      </p>
-
-      <div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-8 text-[14px]">
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--gold)] text-[13px]"></span> Custom CMYK Printing</p>
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--cyan)] text-[13px]"></span> Foil &amp; Spot UV Finishing</p>
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--magenta)] text-[13px]"></span> Bulk Manufacturing</p>
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--gold)] text-[13px]"></span> Fast Nationwide Delivery</p>
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--cyan)] text-[13px]"></span> In-House Die-Cutting</p>
-        <p class="flex items-center gap-2 text-white/80"><span class="reg-mark text-[var(--magenta)] text-[13px]"></span> Affordable Pricing</p>
-      </div>
-    </div>
-
-    <div class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-7 relative">
-      <div class="flex items-center gap-4">
-        <div class="w-14 h-14 rounded-full grad-bar flex items-center justify-center font-head font-extrabold text-[#1a0a12] text-[18px] shrink-0">AH</div>
-        <div>
-          <p class="font-head font-bold text-[17px]">[ Owner Name ]</p>
-          <p class="text-[var(--gold)] text-[12.5px] font-medium">Founder &amp; Managing Director</p>
-        </div>
-      </div>
-      <p class="mt-5 text-[13.5px] text-white/65 leading-relaxed">
-        With over two decades on the press floor, our founder has built Al Haramine into one of
-        Rajshahi's most trusted label and packaging manufacturers — combining traditional craftsmanship
-        with modern CMYK production.
-      </p>
-
-      <div class="mt-6 pt-5 border-t border-white/10 space-y-3 text-[13.5px] text-white/70">
-        <p class="flex items-start gap-2.5">
-          <span class="reg-mark text-[var(--gold)] text-[13px] mt-0.5 shrink-0"></span>
-          Business Address<br><span class="text-white/50">Mohammadpur, Rajshahi Division, Bangladesh</span>
-        </p>
-        <p class="flex items-center gap-2.5">
-          <span class="reg-mark text-[var(--cyan)] text-[13px] shrink-0"></span> +880 1XXX-XXXXXX
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRODUCTS ============ -->
-<section id="products" class="px-5 md:px-8 py-20 md:py-28">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <p class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3">Our Products</p>
-      <h2 class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight">What We <span class="grad-text">Print</span></h2>
-      <p class="mt-4 text-white/65 text-[15px]">From seed-packet hangtags to retail cartons — printed with precision colour and finished in-house.</p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#3A0E26] via-[#1A0E14] to-[var(--bg-2)] flex items-center justify-center">
-          <span class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--gold)] text-[#1a0a12]">Best Seller</span>
-          <div class="w-20 h-28 tag-shape bg-[var(--card-2)] border border-white/10 flex flex-col items-center justify-center gap-1.5">
-            <span class="reg-mark text-[var(--magenta)] text-[16px]"></span>
-            <span class="font-head text-[9px] text-white/50 tracking-widest">SP TAG</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Hangtags &amp; Labels</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">Die-cut hangtags and stickers for seed packets, caps and agro lines, foil-edged and varnished.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#0E2A33] via-[#0E141A] to-[var(--bg-2)] flex items-center justify-center">
-          <span class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--cyan)] text-[#06222a]">Popular</span>
-          <div class="w-24 h-20 rounded-lg bg-[var(--card-2)] border border-white/10 grid grid-cols-3 gap-[3px] p-2.5">
-            <div class="bg-white/10 rounded-sm"></div><div class="bg-[var(--magenta)]/70 rounded-sm"></div><div class="bg-[var(--cyan)]/70 rounded-sm"></div>
-            <div class="bg-[var(--cyan)]/70 rounded-sm"></div><div class="bg-white/10 rounded-sm"></div><div class="bg-[var(--magenta)]/70 rounded-sm"></div>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Carton &amp; Box Printing</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">Folding cartons and cap boxes in 4-colour offset, with holographic and security options.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#3A2A0E] via-[#1A140E] to-[var(--bg-2)] flex items-center justify-center">
-          <span class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--magenta)] text-white">New</span>
-          <div class="w-20 h-28 rounded-lg bg-[var(--card-2)] border border-white/10 flex flex-col items-center justify-center gap-2 px-2">
-            <div class="h-[3px] w-12 grad-bar rounded-full"></div>
-            <span class="font-head text-[9px] text-white/50 tracking-widest">4 CPA</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Agro &amp; Seed Pack Labels</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">Bilingual Bangla/English dosage labels and pouch graphics for pesticide and fertiliser brands.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#142033] via-[#0E141A] to-[var(--bg-2)] flex items-center justify-center">
-          <div class="w-24 h-28 bg-[var(--card-2)] border border-white/10 rounded shadow-inner flex flex-col items-center justify-center gap-1.5">
-            <div class="w-14 space-y-1">
-              <div class="h-[2px] bg-white/20 rounded-full"></div>
-              <div class="h-[2px] bg-white/20 rounded-full"></div>
-              <div class="h-[2px] bg-white/15 rounded-full w-2/3"></div>
-            </div>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Pads &amp; Stationery</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">Letterheads, memo pads, invoice books and ledgers — gummed, perforated and trimmed.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#33240E] via-[#14110E] to-[var(--bg-2)] flex items-center justify-center">
-          <div class="w-24 h-24 rounded-full bg-[var(--card-2)] border border-white/10 flex items-center justify-center">
-            <span class="font-head text-[10px] text-white/50 tracking-widest">FOIL·UV</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Foil, UV &amp; Lamination</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">Spot UV, hot-foil stamping, gloss/matte lamination and emboss, applied in the same building.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-      <article class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden">
-        <div class="relative h-44 bg-gradient-to-br from-[#2A0E33] via-[#140E1A] to-[var(--bg-2)] flex items-center justify-center">
-          <span class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--gold)] text-[#1a0a12]">Hot</span>
-          <div class="w-20 h-20 rotate-45 bg-[var(--card-2)] border border-white/10 rounded-md"></div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-head font-bold text-[18px] mb-1.5">Custom Die-Cutting</h3>
-          <p class="text-[13.5px] text-white/60 leading-relaxed">New shape on request — we cut a fresh steel-rule die in-house and proof it before the full run.</p>
-          <a href="#quote" class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]">Get Quote →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY CHOOSE US ============ -->
-<section id="why" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <p class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3">Why Choose Us</p>
-      <h2 class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight">The <span class="grad-text">Al Haramine</span> Advantage</h2>
-      <p class="mt-4 text-white/65 text-[15px]">We go beyond printing — we deliver an experience that keeps clients reordering.</p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Fast Production</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Bulk orders completed within 7–15 working days, express options available.</p>
-      </div>
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Colour Guaranteed</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Every job is proofed and checked against the approved CMYK before the full run.</p>
-      </div>
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Nationwide Delivery</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Reliable delivery across Bangladesh with tracking support on every shipment.</p>
-      </div>
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Custom Design</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Full artwork support — layout, colour separation and die shapes handled in-house.</p>
-      </div>
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Bulk Discounts</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Special pricing for large orders, repeat clients and corporate accounts.</p>
-      </div>
-      <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover">
-        <span class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"></span>
-        <h3 class="font-head font-bold text-[15.5px] mb-1.5">Responsive Support</h3>
-        <p class="text-[13px] text-white/60 leading-relaxed">Our team is on hand for queries, proofs and after-sales support.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section class="px-5 md:px-8 py-20 md:py-28">
-  <div class="max-w-3xl mx-auto text-center">
-    <p class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3 reveal">Testimonials</p>
-    <h2 class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight mb-12 reveal">What Our <span class="grad-text">Clients Say</span></h2>
-
-    <div class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-9 md:p-12">
-      <div class="text-[var(--gold)] text-[18px] tracking-wider mb-5">★★★★★</div>
-      <p class="font-head italic text-[16px] md:text-[18px] text-white/85 leading-relaxed">
-        "We get pesticide pouch labels printed every season — the colour match is spot on
-        and delivery is always on time."
-      </p>
-      <div class="mt-7 w-12 h-12 rounded-full grad-bar mx-auto flex items-center justify-center font-head font-bold text-[#1a0a12] text-[14px]">PL</div>
-      <p class="font-head font-semibold text-[14.5px] mt-3">Procurement Lead</p>
-      <p class="text-[12.5px] text-white/50">Agro Distribution Company</p>
-    </div>
-    <div class="dots mt-6"><span class="active"></span><span></span><span></span></div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="grad-bar px-5 md:px-8 py-16 md:py-20">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="font-head font-extrabold text-[28px] md:text-[38px] text-[#1a0a12] leading-tight">Ready to Order?</h2>
-    <p class="mt-3 text-[#1a0a12]/75 text-[14.5px] md:text-[15.5px] max-w-xl mx-auto">
-      Contact us today for a free quote. Bulk discounts available for orders of 5,000+ pieces.
-    </p>
-    <div class="mt-7 flex flex-wrap items-center justify-center gap-4">
-      <a href="tel:+8801XXXXXXXXX" class="px-7 py-3.5 rounded-full bg-[#1a0a12] text-white font-semibold">📞 Call Us Now</a>
-      <a href="#quote" class="px-7 py-3.5 rounded-full bg-white/90 text-[#1a0a12] font-semibold">✉️ Send Message</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT / QUOTE ============ -->
-<section id="quote" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]" data-anchor="contact">
-  <div id="contact" class="max-w-7xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <p class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3">Contact Us</p>
-      <h2 class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight">Get In <span class="grad-text">Touch</span></h2>
-      <p class="mt-4 text-white/65 text-[15px]">Have a requirement? Fill out the form below or reach us directly. We'll respond within 24 hours.</p>
-    </div>
-
-    <div class="grid lg:grid-cols-5 gap-6">
-      <div class="lg:col-span-2 space-y-4">
-        <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start">
-          <span class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"></span>
-          <div>
-            <p class="font-head font-semibold text-[14px]">Business Address</p>
-            <p class="text-[13px] text-white/60 mt-0.5">Mohammadpur, Rajshahi Division, Bangladesh</p>
-          </div>
-        </div>
-        <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start">
-          <span class="reg-mark text-[var(--cyan)] text-[18px] mt-0.5 shrink-0"></span>
-          <div>
-            <p class="font-head font-semibold text-[14px]">Owner</p>
-            <p class="text-[13px] text-white/60 mt-0.5">[ Owner Name ] — Founder &amp; Managing Director</p>
-          </div>
-        </div>
-        <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start">
-          <span class="reg-mark text-[var(--magenta)] text-[18px] mt-0.5 shrink-0"></span>
-          <div>
-            <p class="font-head font-semibold text-[14px]">Phone</p>
-            <p class="text-[13px] text-white/60 mt-0.5">+880 1XXX-XXXXXX · Available 9 AM – 7 PM</p>
-          </div>
-        </div>
-        <div class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start">
-          <span class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"></span>
-          <div>
-            <p class="font-head font-semibold text-[14px]">Email</p>
-            <p class="text-[13px] text-white/60 mt-0.5">hello@alharamineprint.com · We reply within 24hrs</p>
-          </div>
-        </div>
-      </div>
-
-      <form id="quoteForm" class="lg:col-span-3 reveal bg-[var(--card)] border border-white/10 rounded-2xl p-6 md:p-8 space-y-5" novalidate>
-        <h3 class="font-head font-bold text-[18px] mb-1">Send a Message</h3>
-
-        <div id="formSuccess" class="hidden rounded-xl grad-bar p-5 text-[14.5px] text-[#1a0a12]">
-          <p class="font-head font-bold text-[17px] mb-1">Job received.</p>
-          <p class="opacity-80">We'll reply with a quote within 24 hours. Thanks for reaching out.</p>
-        </div>
-
-        <div id="formFields" class="space-y-5">
-          <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label for="name" class="block text-[12.5px] font-medium text-white/55 mb-1.5">Your Name</label>
-              <input id="name" name="name" type="text" required class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30" placeholder="e.g. Rahim Uddin">
-              <p class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1">Please enter your name.</p>
-            </div>
-            <div>
-              <label for="phone" class="block text-[12.5px] font-medium text-white/55 mb-1.5">Phone Number</label>
-              <input id="phone" name="phone" type="tel" required class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30" placeholder="+880 1XXX-XXXXXX">
-              <p class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1">Please enter a phone number.</p>
-            </div>
-          </div>
-
-          <div>
-            <label for="email" class="block text-[12.5px] font-medium text-white/55 mb-1.5">Email Address</label>
-            <input id="email" name="email" type="email" class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30" placeholder="you@company.com">
-          </div>
-
-          <div>
-            <label for="product" class="block text-[12.5px] font-medium text-white/55 mb-1.5">Product / Service</label>
-            <select id="product" name="product" class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white">
-              <option>Select a product</option>
-              <option>Hangtags &amp; Labels</option>
-              <option>Carton &amp; Box Printing</option>
-              <option>Agro / Seed Pack Labels</option>
-              <option>Pads &amp; Stationery</option>
-              <option>Foil / UV / Lamination</option>
-              <option>Custom Die-Cutting</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="details" class="block text-[12.5px] font-medium text-white/55 mb-1.5">Your Message</label>
-            <textarea id="details" name="details" rows="4" required class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30" placeholder="Tell us about size, quantity, stock, colours, finishing, deadline..."></textarea>
-            <p class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1">Please tell us a bit about the job.</p>
-          </div>
-
-          <button type="submit" class="w-full sm:w-auto px-7 py-3.5 rounded-full grad-btn text-[#1a0a12] font-semibold">Send Message →</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="px-5 md:px-8 pt-14 pb-8 bg-[var(--bg)] border-t border-white/5">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-10">
-    <div>
-      <div class="flex items-center gap-2.5 mb-3">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAABlCAYAAACIqZu9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAkTSURBVHhe7Z3Pq1VVFMef4MSZQ2dZLyqIwkFBo4SGQuBMaCpIf0H5L0iiQYMmStDojcwwAgdNdBCkNAqcNHDwhtrzR5YkcuJ7dV/3XWevvddaZ59z9n13feA7uc977o/1ufvnOcetznESbNEHHAe4GE4SF8NJ4mI4SVwMJ4mL4SRxMZwkLoaTxMVwkmyEGP9cvL3Io5NX6Z9E7B37vntwfGeRx6evL4+3n9k3YjzdubMoGop4//A3i9zbOt+LBe5Yixw4v/j7X0e+XYgDYZ7ffUgPsXasrRj49e9tX8oXLREL2tdA7h/6mh5mrVhbMWghpLFgEcP6Wq3QrBi3frvVfXbqFH14CS2CNBZqinHxz6fdgSt73fEbj7ub957RPzdDU2Ls7u52Z7/4snv37Xe67deOLsJBiyCNhdpibF3ZW2b7+sNuZ/c/+s9mpwkxvjp3rvvk4+NLGeJw0CJIY2FMMUIOX3vQnf79Cf3nszGbGGgd0FW89cZ2T4ZNFCPk4A8vupm5mVyMIMSbR1/vSZAKBy2CNBamFCMWZM4WZDIxtEJsuhhzCzK6GFYhXIzVYAyC507FqGJgUGkVwsVI58jPD7u7T57Tw1ZnFDHQSnz0wYe9IlvCQYsgjYWWxECwDjJ291JdjBqtRBwOWgRpLLQmRgi6l7EWyaqJUbOViMNBiyCNhVbFQNB6nPz1b/oyg6kixk/XrlVtJeJw0CJIY6FlMUKwglpz7DFYjNpdBw0HLYI0FtZBDOTQjw+qyTFIDOxr0ELWDgctgjQW1kUMBF1Ljb0XsxifnjjRK+IY4aBFkMbCOokRMnTWYhKD2/AqxdLlcNAiSGNhbjEw+6CPSTJEDrUYVikwY8F4hD5eCgctgjQW5hYDYOZBH5fEKodKDCxt08JJ8vmZM4vnf3f5cu9vpWAanIIWQRoLLYgBMHbA3gn9eykWOcRiWAaa6DowlQ1YxMBzUtAiSGOhFTEAZh2YfdB/U4p2n0UkhmWdgkoBXIzhYgCLHJitaKayRTHQlGulQNDCUFyMOmIAixwYxEopihGffylNGFNQXIx6YgCMOdAS0H+fi/TssKwYlnEFZh8cLkZdMYDleJKNN1YMSxeC8ze5WQRwMWyFLIFWgD4nF0mXwophmZpyRQy4GOOIAbTjjdIsJSkGLvahBSoFC18lXIzxxMB4gz4vF6yH5EiKoT2vAl0OZCrhYownBsDWO31uLrlWoycG1h5ocUrJXUoY42KMK4b22BCJoyeGZddU0loAF0NfPESDdsONm6H0xChdGUYjGVsEXIzxxTj7x7+95+fC7aOsiGHpRqStBXAxxhcDaDbauO5kRQxtN3LsvffjpxfZNDGe3eyv6UwhhmZdg5udrIih7UZS+yE5Nk2M1H26phBD+xqpzbWlGJZuBC0MZiTSWE7yqS1GuMmaJvcOXugdR5K5xAD0GLmkpq1LMSy/5ilSW4wpM6cYmpXQrBiWDbMp4mLYxNBMW1Mzk6UYlr2RKeJi2MTQbMdnWwztjGSquBh6MbT7JlkxMPWkRWkhLoZeDM10FXExJs4cYmhbC+74LsaImVoMy3mgGIukMIuhXcNAtK+BVBXj5X2/tekdR5gpxcBxNUvhIcUlce05GFzBclhmPtzr0CJIgiJboMeRZgoxcDzteRhxsOmWwjxd5c4Ez6F9DcTFeCUGxg8oJAaXuBeXpYWIk7vWxCwGuhIt2tdAXIzxwrUWwLwkjutNtLgY7YhRuj3Tyu4qLUopmnMxgIvRhhiSi45WxNDOGrTjDBdjXjEwpsh1HzErYmiXxbXdiYsxnxhoJbiBZooVMSznZNAr2nO4GNOKgRbi2C+P2BN+c6yIAbQXMWtOBnYxxhcDU1isa0i7jBjc8SjQE8NyXoZ0EOpi1BEDy9443wJBF4HguJquggIp4ta/J4blYubcFe4xLoZNjLEJd3WO6YkBahYwpuZxaREkcTHShBvnxSTFsLQakksJXIz2xMCSQ6p2STEAnkCLVAoKn8PFaEuMcG+11HfMigG015nkCglcjHbEQK+AGSg3q8yKYVnXgIHcXXVcjDbECFLkapUVA1iKmeqzgOVYLkZ9McK5N9x3C4piAO0eCpJqoiz/2Q335mkRJHExXt3yuzQeFIlhmaUgKTmA5lJFF6OeGKHFluxxicQAlrsDI5wc0hVWF6OOGLEU3LgiRiwGsMqB7iP1ZlD00vFcjOFihBY6N9ikqMQA0l86DWcqHsuNYVwMuxjxmC51b/ccajGAVQ5uMQVwMxbu39MiSLJJYkCCsA6llQKYxADWbgXhRsSQgG77uxh6MeJVa3yf0t3vGLMYYIgceMOcxWiRgu0uRvra0hT4PuNumeu+JQwSA4RVNFp4adB6pN48HsPfOHloESTZr2Lgu6KnZXKzQSmDxQjQN6YJWge67VuCFkGSdRQDZ2TlTs1Dt0Fbbe290VJUEwNIpp+5oBmUCkKLIMk6iYHT83ItRdzdhuS6Zy1VxQCl6ack+MAl6/e2Ly0uUqbFyKV1MdA64EKg3Cl6KSEQbkBvpboYAfzyUx9AkyBIagwSeHL2hliSFsWADDiTO/e/K+Pzc0LUbCViRhMDhAEk/TDaoHvCcUrTrqc7dxa3X4QAtEhIK2LgZF60DLmxA0DBMYhMdc94rNSqDmFUMQIoqGbjLBf8QjDgyrUiAYjy6OTVFy3KwQtNiFECnwufL9U6hHAzuZpMIkagpiAIlntLXU0NaMF7eSkdBESL9fj09YUUz++mb0pCwfeCz5E7JUHaatZiUjECtQVBMODFF8ctiA0BRaZJ3SdcA94npvilNSDJOGsMZhEjAEFQzFyzaQl+Xfj1oUlGAab+UlPgfYRWITVmoNFM3cdgVjFi8CUMnebmAvlQFIiI1xpLmCAAXgefRys9WtKpuosczYgRwJeCX3qpia0ZFBChN5xDgUORaSBZeJ5FgBC0HpABso4hqpXmxIgJ8/fcoGwdA+kh4RjrD7VoWgwKmunQRNMvu/WEGVQL3YSEtRKDEkRBU9yKLGgNwlgG729dRKCstRgpUIggTGhdhowBaDAmCMeMB7MtdwsW9p0YEiCONC0NCKdkI8VwyrgYThIXw0nyP80GezD1eOoAAAAAAElFTkSuQmCC" alt="" class="h-8 w-auto rounded bg-white/5 p-0.5">
-        <span class="font-head font-bold text-[15px]">AL HARAMINE <span class="grad-text">PRINTING</span></span>
-      </div>
-      <p class="text-[13px] text-white/55 leading-relaxed max-w-xs">Bangladesh's trusted label, hangtag, carton and stationery press — precise colour, on-time delivery.</p>
-      <div class="flex gap-3 mt-4">
-        <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15">f</a>
-        <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15">ig</a>
-        <a href="#" aria-label="WhatsApp" class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15">wa</a>
-      </div>
-    </div>
-    <div>
-      <p class="font-head font-bold text-[14px] mb-3">Quick Links</p>
-      <ul class="space-y-2 text-[13.5px] text-white/60">
-        <li><a href="#top" class="hover:text-white">Home</a></li>
-        <li><a href="#about" class="hover:text-white">About</a></li>
-        <li><a href="#products" class="hover:text-white">Products</a></li>
-        <li><a href="#why" class="hover:text-white">Why Us</a></li>
-        <li><a href="#quote" class="hover:text-white">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-head font-bold text-[14px] mb-3">Contact Info</p>
-      <ul class="space-y-2 text-[13.5px] text-white/60">
-        <li>Mohammadpur, Rajshahi Division, Bangladesh</li>
-        <li>+880 1XXX-XXXXXX</li>
-        <li>hello@alharamineprint.com</li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto pt-6 border-t border-white/5 text-center text-[12px] text-white/40">
-    © 2026 Al Haramine Printing &amp; Packaging. All rights reserved.
-  </div>
-</footer>
-
-<!-- floating whatsapp -->
-<a href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center text-white text-[24px]">
-  ✆
-</a>
-
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('hidden');
-    menuBtn.setAttribute('aria-expanded', String(!open));
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  const form = document.getElementById('quoteForm');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let valid = true;
-    ['name','phone','details'].forEach(id => {
-      const field = document.getElementById(id);
-      const err = field.parentElement.querySelector('.error-msg');
-      if (!field.value.trim()) {
-        valid = false;
-        err && err.classList.remove('hidden');
-        field.classList.add('border-[var(--magenta)]');
-      } else {
-        err && err.classList.add('hidden');
-        field.classList.remove('border-[var(--magenta)]');
+    <style>
+      :root {
+        --bg: #0a0d14;
+        --bg-2: #0e121b;
+        --card: #151a26;
+        --card-2: #1a2030;
+        --line: rgba(255, 255, 255, 0.08);
+        --text: #f4f5f7;
+        --muted: #9aa1ae;
+        --magenta: #312b2e;
+        --gold: #f5a623;
+        --cyan: #00a7ce;
       }
-    });
-    if (!valid) return;
-    document.getElementById('formFields').classList.add('hidden');
-    document.getElementById('formSuccess').classList.remove('hidden');
-  });
-</script>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+      }
+      .font-head {
+        font-family: "Poppins", sans-serif;
+      }
+      .font-bn {
+        font-family: "Noto Sans Bengali", sans-serif;
+      }
 
-</body>
+      .grad-text {
+        background: linear-gradient(
+          90deg,
+          var(--magenta),
+          var(--gold),
+          var(--cyan)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .grad-bar {
+        background: linear-gradient(
+          90deg,
+          var(--magenta),
+          var(--gold),
+          var(--cyan)
+        );
+      }
+      .grad-btn {
+        background: linear-gradient(90deg, var(--magenta), var(--gold));
+      }
+      .grad-btn:hover {
+        background: linear-gradient(90deg, var(--gold), var(--magenta));
+      }
+
+      /* halftone texture for hero (printing motif, replaces stock photo) */
+      .halftone {
+        background-image:
+
+        background-size:
+          14px 14px,
+          14px 14px;
+        background-position:
+          0 0,
+          7px 7px;
+      }
+      .hero-bg {
+        background:
+          radial-gradient(
+            ellipse at 20% 15%,
+            rgba(227, 28, 130, 0.22),
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 85% 10%,
+            rgba(0, 167, 206, 0.2),
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 60% 90%,
+            rgba(245, 166, 35, 0.14),
+            transparent 55%
+          ),
+          linear-gradient(180deg, #0a0d14 0%, #0a0d14 100%);
+      }
+
+      .reg-mark {
+        position: relative;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+      }
+      .reg-mark::before,
+      .reg-mark::after {
+        content: "";
+        position: absolute;
+        background: currentColor;
+      }
+      .reg-mark::before {
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: translateX(-50%);
+      }
+      .reg-mark::after {
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: translateY(-50%);
+      }
+
+      .tag-shape {
+        clip-path: path(
+          "M0,40 C0,17 20,0 50,0 C80,0 100,17 100,40 L100,260 L0,260 Z"
+        );
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      ::selection {
+        background: var(--magenta);
+        color: #fff;
+      }
+
+      .card-hover {
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+          border-color 0.35s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        border-color: rgba(245, 166, 35, 0.4);
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      .dots {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+      }
+      .dots span {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+      .dots span.active {
+        background: var(--gold);
+        width: 22px;
+        border-radius: 999px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- ============ NAV ============ -->
+    <header
+      class="fixed top-0 inset-x-0 z-40 bg-[#0A0D14]/85 backdrop-blur border-b border-white/5"
+    >
+      <div
+        class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between"
+      >
+        <a href="#top" class="flex items-center gap-2.5">
+          <img
+            src="data:image/png;base64,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"
+            alt="Al Haramine logo"
+            class="h-8 md:h-9 w-auto rounded bg-white/5 p-0.5"
+          />
+          <span
+            class="font-head font-bold text-[15.5px] md:text-[17px] leading-none"
+          >
+            AL HARAMINE <span class="grad-text">PRINTING</span>
+          </span>
+        </a>
+        <nav
+          class="hidden md:flex items-center gap-7 font-medium text-[14px] text-white/80"
+        >
+          <a href="#top" class="hover:text-white transition-colors">Home</a>
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#products" class="hover:text-white transition-colors"
+            >Products</a
+          >
+          <a href="#why" class="hover:text-white transition-colors">Why Us</a>
+          <a
+            href="#contact"
+            class="px-4 py-2 rounded-full border border-white/20 hover:border-white/50 transition-colors"
+            >Contact</a
+          >
+          <a
+            href="#quote"
+            class="px-4 py-2 rounded-full grad-btn text-[#1a0a12] font-semibold transition-colors"
+            >Get Quote</a
+          >
+        </nav>
+        <button
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+          class="md:hidden w-10 h-10 grid place-items-center text-white"
+        >
+          <span class="reg-mark text-[22px]"></span>
+        </button>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-white/5 bg-[#0A0D14] px-5 py-4 space-y-3 font-medium text-white/85"
+      >
+        <a href="#top" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#products" class="block">Products</a>
+        <a href="#why" class="block">Why Us</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#quote" class="block font-semibold grad-text">Get Quote →</a>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section
+      id="top"
+      class="relative pt-28 md:pt-36 pb-0 hero-bg overflow-hidden"
+    >
+      <div class="absolute inset-0 halftone opacity-40"></div>
+      <div class="max-w-4xl mx-auto px-5 text-center relative">
+        <span
+          class="reveal in inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 text-[12.5px] font-medium text-[var(--gold)] mb-7"
+        >
+          <span class="reg-mark text-[12px]"></span> Bangladesh's Trusted
+          Printing &amp; Packaging Partner
+        </span>
+
+        <h1
+          class="font-head font-extrabold leading-[1.02] text-[13vw] sm:text-[58px] md:text-[68px]"
+        >
+          <span class="block text-white">AL HARAMINE</span>
+          <span class="block grad-text">PRINTING &amp; PACKAGING</span>
+        </h1>
+
+        <p
+          class="mt-6 text-white/70 text-[15.5px] md:text-[17px] max-w-2xl mx-auto leading-relaxed"
+        >
+          Premium labels, hangtags, cartons &amp; stationery printing — custom
+          designed and bulk manufactured with precise CMYK colour and in-house
+          finishing.
+        </p>
+        <p class="font-bn text-white/55 text-[14.5px] mt-2">
+          মোহাম্মদপুর, রাজশাহী থেকে সারাদেশে সরবরাহ
+        </p>
+
+        <p
+          class="mt-4 text-[13px] text-white/45 flex items-center justify-center gap-1.5"
+        >
+          <span class="reg-mark text-[12px] text-[var(--gold)]"></span>
+          Mohammadpur, Rajshahi, Bangladesh
+        </p>
+
+        <div
+          class="mt-8 flex flex-wrap items-center justify-center gap-4 pb-16 md:pb-24"
+        >
+          <a
+            href="#quote"
+            class="px-7 py-3.5 rounded-full grad-btn text-[#1a0a12] font-semibold transition-colors"
+            >Get Free Quote →</a
+          >
+          <a
+            href="#products"
+            class="px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:border-white/60 transition-colors"
+            >View Products</a
+          >
+        </div>
+      </div>
+
+      <!-- stats bar -->
+      <div class="grad-bar relative">
+        <div
+          class="max-w-7xl mx-auto px-5 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+        >
+          <div>
+            <div
+              class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]"
+            >
+              12,00,000+
+            </div>
+            <div
+              class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5"
+            >
+              Labels &amp; Tags Printed
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]"
+            >
+              300+
+            </div>
+            <div
+              class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5"
+            >
+              Happy Clients
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]"
+            >
+              26+
+            </div>
+            <div
+              class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5"
+            >
+              Years of Experience
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-head font-extrabold text-[26px] md:text-[32px] text-[#1a0a12]"
+            >
+              48 hrs
+            </div>
+            <div
+              class="text-[12px] md:text-[13px] text-[#1a0a12]/75 font-medium mt-0.5"
+            >
+              Fast Turnaround
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-start">
+        <div class="reveal">
+          <p
+            class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3"
+          >
+            About Us
+          </p>
+          <h2
+            class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight"
+          >
+            Crafting Precision
+            <span class="grad-text block">Since Day One</span>
+          </h2>
+
+          <p class="mt-6 text-[15px] text-white/75 leading-relaxed">
+            <span class="font-semibold text-white"
+              >Al Haramine Printing &amp; Packaging</span
+            >
+            is a leading press based in Mohammadpur, Rajshahi, specializing in
+            premium labels, hangtags, cartons and agro-product packaging. Built
+            on accurate colour, sharp die-cutting and on-time delivery, our
+            press serves agro-chemical, FMCG and consumer brands across
+            Bangladesh.
+          </p>
+          <p class="mt-4 text-[15px] text-white/75 leading-relaxed">
+            From colour separation to die-cutting, every job is proofed in-house
+            before the full run — so what you approve is exactly what ships.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-8 text-[14px]">
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--gold)] text-[13px]"></span>
+              Custom CMYK Printing
+            </p>
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--cyan)] text-[13px]"></span> Foil
+              &amp; Spot UV Finishing
+            </p>
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--magenta)] text-[13px]"></span>
+              Bulk Manufacturing
+            </p>
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--gold)] text-[13px]"></span> Fast
+              Nationwide Delivery
+            </p>
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--cyan)] text-[13px]"></span>
+              In-House Die-Cutting
+            </p>
+            <p class="flex items-center gap-2 text-white/80">
+              <span class="reg-mark text-[var(--magenta)] text-[13px]"></span>
+              Affordable Pricing
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-7 relative"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 rounded-full grad-bar flex items-center justify-center font-head font-extrabold text-[#1a0a12] text-[18px] shrink-0"
+            >
+              AH
+            </div>
+            <div>
+              <p class="font-head font-bold text-[17px]">[ Owner Name ]</p>
+              <p class="text-[var(--gold)] text-[12.5px] font-medium">
+                Founder &amp; Managing Director
+              </p>
+            </div>
+          </div>
+          <p class="mt-5 text-[13.5px] text-white/65 leading-relaxed">
+            With over two decades on the press floor, our founder has built Al
+            Haramine into one of Rajshahi's most trusted label and packaging
+            manufacturers — combining traditional craftsmanship with modern CMYK
+            production.
+          </p>
+
+          <div
+            class="mt-6 pt-5 border-t border-white/10 space-y-3 text-[13.5px] text-white/70"
+          >
+            <p class="flex items-start gap-2.5">
+              <span
+                class="reg-mark text-[var(--gold)] text-[13px] mt-0.5 shrink-0"
+              ></span>
+              Business Address<br /><span class="text-white/50"
+                >Mohammadpur, Rajshahi Division, Bangladesh</span
+              >
+            </p>
+            <p class="flex items-center gap-2.5">
+              <span
+                class="reg-mark text-[var(--cyan)] text-[13px] shrink-0"
+              ></span>
+              +880 1XXX-XXXXXX
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section id="products" class="px-5 md:px-8 py-20 md:py-28">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <p
+            class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3"
+          >
+            Our Products
+          </p>
+          <h2
+            class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight"
+          >
+            What We <span class="grad-text">Print</span>
+          </h2>
+          <p class="mt-4 text-white/65 text-[15px]">
+            From seed-packet hangtags to retail cartons — printed with precision
+            colour and finished in-house.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#3A0E26] via-[#1A0E14] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <span
+                class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--gold)] text-[#1a0a12]"
+                >Best Seller</span
+              >
+              <div
+                class="w-20 h-28 tag-shape bg-[var(--card-2)] border border-white/10 flex flex-col items-center justify-center gap-1.5"
+              >
+                <span class="reg-mark text-[var(--magenta)] text-[16px]"></span>
+                <span class="font-head text-[9px] text-white/50 tracking-widest"
+                  >SP TAG</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Hangtags &amp; Labels
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                Die-cut hangtags and stickers for seed packets, caps and agro
+                lines, foil-edged and varnished.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#0E2A33] via-[#0E141A] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <span
+                class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--cyan)] text-[#06222a]"
+                >Popular</span
+              >
+              <div
+                class="w-24 h-20 rounded-lg bg-[var(--card-2)] border border-white/10 grid grid-cols-3 gap-[3px] p-2.5"
+              >
+                <div class="bg-white/10 rounded-sm"></div>
+                <div class="bg-[var(--magenta)]/70 rounded-sm"></div>
+                <div class="bg-[var(--cyan)]/70 rounded-sm"></div>
+                <div class="bg-[var(--cyan)]/70 rounded-sm"></div>
+                <div class="bg-white/10 rounded-sm"></div>
+                <div class="bg-[var(--magenta)]/70 rounded-sm"></div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Carton &amp; Box Printing
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                Folding cartons and cap boxes in 4-colour offset, with
+                holographic and security options.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#3A2A0E] via-[#1A140E] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <span
+                class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--magenta)] text-white"
+                >New</span
+              >
+              <div
+                class="w-20 h-28 rounded-lg bg-[var(--card-2)] border border-white/10 flex flex-col items-center justify-center gap-2 px-2"
+              >
+                <div class="h-[3px] w-12 grad-bar rounded-full"></div>
+                <span class="font-head text-[9px] text-white/50 tracking-widest"
+                  >4 CPA</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Agro &amp; Seed Pack Labels
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                Bilingual Bangla/English dosage labels and pouch graphics for
+                pesticide and fertiliser brands.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#142033] via-[#0E141A] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <div
+                class="w-24 h-28 bg-[var(--card-2)] border border-white/10 rounded shadow-inner flex flex-col items-center justify-center gap-1.5"
+              >
+                <div class="w-14 space-y-1">
+                  <div class="h-[2px] bg-white/20 rounded-full"></div>
+                  <div class="h-[2px] bg-white/20 rounded-full"></div>
+                  <div class="h-[2px] bg-white/15 rounded-full w-2/3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Pads &amp; Stationery
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                Letterheads, memo pads, invoice books and ledgers — gummed,
+                perforated and trimmed.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#33240E] via-[#14110E] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <div
+                class="w-24 h-24 rounded-full bg-[var(--card-2)] border border-white/10 flex items-center justify-center"
+              >
+                <span
+                  class="font-head text-[10px] text-white/50 tracking-widest"
+                  >FOIL·UV</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Foil, UV &amp; Lamination
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                Spot UV, hot-foil stamping, gloss/matte lamination and emboss,
+                applied in the same building.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="reveal card-hover bg-[var(--card)] border border-white/10 rounded-2xl overflow-hidden"
+          >
+            <div
+              class="relative h-44 bg-gradient-to-br from-[#2A0E33] via-[#140E1A] to-[var(--bg-2)] flex items-center justify-center"
+            >
+              <span
+                class="absolute top-3 right-3 text-[10.5px] font-bold px-2.5 py-1 rounded-full bg-[var(--gold)] text-[#1a0a12]"
+                >Hot</span
+              >
+              <div
+                class="w-20 h-20 rotate-45 bg-[var(--card-2)] border border-white/10 rounded-md"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-head font-bold text-[18px] mb-1.5">
+                Custom Die-Cutting
+              </h3>
+              <p class="text-[13.5px] text-white/60 leading-relaxed">
+                New shape on request — we cut a fresh steel-rule die in-house
+                and proof it before the full run.
+              </p>
+              <a
+                href="#quote"
+                class="inline-block mt-3 text-[13px] font-semibold text-[var(--gold)]"
+                >Get Quote →</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section id="why" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <p
+            class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3"
+          >
+            Why Choose Us
+          </p>
+          <h2
+            class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight"
+          >
+            The <span class="grad-text">Al Haramine</span> Advantage
+          </h2>
+          <p class="mt-4 text-white/65 text-[15px]">
+            We go beyond printing — we deliver an experience that keeps clients
+            reordering.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Fast Production
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Bulk orders completed within 7–15 working days, express options
+              available.
+            </p>
+          </div>
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Colour Guaranteed
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Every job is proofed and checked against the approved CMYK before
+              the full run.
+            </p>
+          </div>
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Nationwide Delivery
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Reliable delivery across Bangladesh with tracking support on every
+              shipment.
+            </p>
+          </div>
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Custom Design
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Full artwork support — layout, colour separation and die shapes
+              handled in-house.
+            </p>
+          </div>
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Bulk Discounts
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Special pricing for large orders, repeat clients and corporate
+              accounts.
+            </p>
+          </div>
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
+          >
+            <span
+              class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"
+            ></span>
+            <h3 class="font-head font-bold text-[15.5px] mb-1.5">
+              Responsive Support
+            </h3>
+            <p class="text-[13px] text-white/60 leading-relaxed">
+              Our team is on hand for queries, proofs and after-sales support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="px-5 md:px-8 py-20 md:py-28">
+      <div class="max-w-3xl mx-auto text-center">
+        <p
+          class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3 reveal"
+        >
+          Testimonials
+        </p>
+        <h2
+          class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight mb-12 reveal"
+        >
+          What Our <span class="grad-text">Clients Say</span>
+        </h2>
+
+        <div
+          class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-9 md:p-12"
+        >
+          <div class="text-[var(--gold)] text-[18px] tracking-wider mb-5">
+            ★★★★★
+          </div>
+          <p
+            class="font-head italic text-[16px] md:text-[18px] text-white/85 leading-relaxed"
+          >
+            "We get pesticide pouch labels printed every season — the colour
+            match is spot on and delivery is always on time."
+          </p>
+          <div
+            class="mt-7 w-12 h-12 rounded-full grad-bar mx-auto flex items-center justify-center font-head font-bold text-[#1a0a12] text-[14px]"
+          >
+            PL
+          </div>
+          <p class="font-head font-semibold text-[14.5px] mt-3">
+            Procurement Lead
+          </p>
+          <p class="text-[12.5px] text-white/50">Agro Distribution Company</p>
+        </div>
+        <div class="dots mt-6">
+          <span class="active"></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="grad-bar px-5 md:px-8 py-16 md:py-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2
+          class="font-head font-extrabold text-[28px] md:text-[38px] text-[#1a0a12] leading-tight"
+        >
+          Ready to Order?
+        </h2>
+        <p
+          class="mt-3 text-[#1a0a12]/75 text-[14.5px] md:text-[15.5px] max-w-xl mx-auto"
+        >
+          Contact us today for a free quote. Bulk discounts available for orders
+          of 5,000+ pieces.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="tel:+8801XXXXXXXXX"
+            class="px-7 py-3.5 rounded-full bg-[#1a0a12] text-white font-semibold"
+            >📞 Call Us Now</a
+          >
+          <a
+            href="#quote"
+            class="px-7 py-3.5 rounded-full bg-white/90 text-[#1a0a12] font-semibold"
+            >✉️ Send Message</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / QUOTE ============ -->
+    <section
+      id="quote"
+      class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]"
+      data-anchor="contact"
+    >
+      <div id="contact" class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <p
+            class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3"
+          >
+            Contact Us
+          </p>
+          <h2
+            class="font-head font-extrabold text-[30px] md:text-[40px] leading-tight"
+          >
+            Get In <span class="grad-text">Touch</span>
+          </h2>
+          <p class="mt-4 text-white/65 text-[15px]">
+            Have a requirement? Fill out the form below or reach us directly.
+            We'll respond within 24 hours.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6">
+          <div class="lg:col-span-2 space-y-4">
+            <div
+              class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
+            >
+              <span
+                class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"
+              ></span>
+              <div>
+                <p class="font-head font-semibold text-[14px]">
+                  Business Address
+                </p>
+                <p class="text-[13px] text-white/60 mt-0.5">
+                  Mohammadpur, Rajshahi Division, Bangladesh
+                </p>
+              </div>
+            </div>
+            <div
+              class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
+            >
+              <span
+                class="reg-mark text-[var(--cyan)] text-[18px] mt-0.5 shrink-0"
+              ></span>
+              <div>
+                <p class="font-head font-semibold text-[14px]">Owner</p>
+                <p class="text-[13px] text-white/60 mt-0.5">
+                  [ Owner Name ] — Founder &amp; Managing Director
+                </p>
+              </div>
+            </div>
+            <div
+              class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
+            >
+              <span
+                class="reg-mark text-[var(--magenta)] text-[18px] mt-0.5 shrink-0"
+              ></span>
+              <div>
+                <p class="font-head font-semibold text-[14px]">Phone</p>
+                <p class="text-[13px] text-white/60 mt-0.5">
+                  +880 1XXX-XXXXXX · Available 9 AM – 7 PM
+                </p>
+              </div>
+            </div>
+            <div
+              class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
+            >
+              <span
+                class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"
+              ></span>
+              <div>
+                <p class="font-head font-semibold text-[14px]">Email</p>
+                <p class="text-[13px] text-white/60 mt-0.5">
+                  hello@alharamineprint.com · We reply within 24hrs
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form
+            id="quoteForm"
+            class="lg:col-span-3 reveal bg-[var(--card)] border border-white/10 rounded-2xl p-6 md:p-8 space-y-5"
+            novalidate
+          >
+            <h3 class="font-head font-bold text-[18px] mb-1">Send a Message</h3>
+
+            <div
+              id="formSuccess"
+              class="hidden rounded-xl grad-bar p-5 text-[14.5px] text-[#1a0a12]"
+            >
+              <p class="font-head font-bold text-[17px] mb-1">Job received.</p>
+              <p class="opacity-80">
+                We'll reply with a quote within 24 hours. Thanks for reaching
+                out.
+              </p>
+            </div>
+
+            <div id="formFields" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-[12.5px] font-medium text-white/55 mb-1.5"
+                    >Your Name</label
+                  >
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30"
+                    placeholder="e.g. Rahim Uddin"
+                  />
+                  <p
+                    class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1"
+                  >
+                    Please enter your name.
+                  </p>
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-[12.5px] font-medium text-white/55 mb-1.5"
+                    >Phone Number</label
+                  >
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30"
+                    placeholder="+880 1XXX-XXXXXX"
+                  />
+                  <p
+                    class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1"
+                  >
+                    Please enter a phone number.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-[12.5px] font-medium text-white/55 mb-1.5"
+                  >Email Address</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30"
+                  placeholder="you@company.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="product"
+                  class="block text-[12.5px] font-medium text-white/55 mb-1.5"
+                  >Product / Service</label
+                >
+                <select
+                  id="product"
+                  name="product"
+                  class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white"
+                >
+                  <option>Select a product</option>
+                  <option>Hangtags &amp; Labels</option>
+                  <option>Carton &amp; Box Printing</option>
+                  <option>Agro / Seed Pack Labels</option>
+                  <option>Pads &amp; Stationery</option>
+                  <option>Foil / UV / Lamination</option>
+                  <option>Custom Die-Cutting</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="details"
+                  class="block text-[12.5px] font-medium text-white/55 mb-1.5"
+                  >Your Message</label
+                >
+                <textarea
+                  id="details"
+                  name="details"
+                  rows="4"
+                  required
+                  class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30"
+                  placeholder="Tell us about size, quantity, stock, colours, finishing, deadline..."
+                ></textarea>
+                <p
+                  class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1"
+                >
+                  Please tell us a bit about the job.
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-full grad-btn text-[#1a0a12] font-semibold"
+              >
+                Send Message →
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer
+      class="px-5 md:px-8 pt-14 pb-8 bg-[var(--bg)] border-t border-white/5"
+    >
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <img
+              src="data:image/png;base64,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"
+              alt=""
+              class="h-8 w-auto rounded bg-white/5 p-0.5"
+            />
+            <span class="font-head font-bold text-[15px]"
+              >AL HARAMINE <span class="grad-text">PRINTING</span></span
+            >
+          </div>
+          <p class="text-[13px] text-white/55 leading-relaxed max-w-xs">
+            Bangladesh's trusted label, hangtag, carton and stationery press —
+            precise colour, on-time delivery.
+          </p>
+          <div class="flex gap-3 mt-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
+              >f</a
+            >
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
+              >ig</a
+            >
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
+              >wa</a
+            >
+          </div>
+        </div>
+        <div>
+          <p class="font-head font-bold text-[14px] mb-3">Quick Links</p>
+          <ul class="space-y-2 text-[13.5px] text-white/60">
+            <li><a href="#top" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="#products" class="hover:text-white">Products</a></li>
+            <li><a href="#why" class="hover:text-white">Why Us</a></li>
+            <li><a href="#quote" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-head font-bold text-[14px] mb-3">Contact Info</p>
+          <ul class="space-y-2 text-[13.5px] text-white/60">
+            <li>Mohammadpur, Rajshahi Division, Bangladesh</li>
+            <li>+880 1XXX-XXXXXX</li>
+            <li>hello@alharamineprint.com</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto pt-6 border-t border-white/5 text-center text-[12px] text-white/40"
+      >
+        © 2026 Al Haramine Printing &amp; Packaging. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- floating whatsapp -->
+    <a
+      href="https://wa.me/8801XXXXXXXXX"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center text-white text-[24px]"
+    >
+      ✆
+    </a>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", String(!open));
+      });
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () => mobileMenu.classList.add("hidden")),
+        );
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      const form = document.getElementById("quoteForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+        ["name", "phone", "details"].forEach((id) => {
+          const field = document.getElementById(id);
+          const err = field.parentElement.querySelector(".error-msg");
+          if (!field.value.trim()) {
+            valid = false;
+            err && err.classList.remove("hidden");
+            field.classList.add("border-[var(--magenta)]");
+          } else {
+            err && err.classList.add("hidden");
+            field.classList.remove("border-[var(--magenta)]");
+          }
+        });
+        if (!valid) return;
+        document.getElementById("formFields").classList.add("hidden");
+        document.getElementById("formSuccess").classList.remove("hidden");
+      });
+    </script>
+  </body>
 </html>
