@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrintCraft BD — Premium Printing & Packaging</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1A2E;
+    --navy-mid: #122340;
+    --navy-light: #1C3560;
+    --gold: #C8973A;
+    --gold-light: #E8B85A;
+    --gold-pale: #F5E8CC;
+    --teal: #1D7A6A;
+    --teal-light: #26A893;
+    --cream: #F8F5EF;
+    --cream-dark: #EDE8DE;
+    --white: #FFFFFF;
+    --ink: #0B1A2E;
+    --text-muted: #8A9BB0;
+    --border: rgba(200,151,58,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(11,26,46,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,151,58,0.15);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo-mark {
+    width: 36px; height: 36px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+  }
+  .nav-logo-mark span {
+    border-radius: 3px;
+    animation: cmyk-pulse 3s ease-in-out infinite;
+  }
+  .nav-logo-mark span:nth-child(1) { background: #00B4D8; animation-delay: 0s; }
+  .nav-logo-mark span:nth-child(2) { background: #EF476F; animation-delay: 0.3s; }
+  .nav-logo-mark span:nth-child(3) { background: #FFD166; animation-delay: 0.6s; }
+  .nav-logo-mark span:nth-child(4) { background: #06D6A0; animation-delay: 0.9s; }
+  @keyframes cmyk-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .nav-brand {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nav-brand span { color: var(--gold); }
+  nav ul {
+    list-style: none; display: flex; gap: 32px;
+  }
+  nav ul a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 8px 20px; border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(200,151,58,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,151,58,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-ink-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: blob-drift 8s ease-in-out infinite alternate;
+  }
+  .hero-ink-blob:nth-child(1) {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(29,122,106,0.25), transparent 70%);
+    top: -100px; right: -100px;
+  }
+  .hero-ink-blob:nth-child(2) {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,151,58,0.15), transparent 70%);
+    bottom: -50px; left: 200px;
+    animation-delay: -4s;
+  }
+  @keyframes blob-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(30px, -20px) scale(1.08); }
+  }
+
+  /* CMYK dots animation */
+  .cmyk-dots {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none; overflow: hidden;
+  }
+  .cmyk-dot {
+    position: absolute; border-radius: 50%;
+    animation: dot-float linear infinite;
+    opacity: 0;
+  }
+  @keyframes dot-float {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 680px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.12);
+    border: 1px solid rgba(200,151,58,0.3);
+    color: var(--gold);
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 2px;
+    margin-bottom: 28px;
+    font-family: 'DM Mono', monospace;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .hero-title .accent { color: var(--gold); font-style: italic; }
+  .hero-title .line-2 { display: block; margin-top: 4px; }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 17px; line-height: 1.75;
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-bottom: 44px;
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 900; color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;
+  }
+  .hero-stat { border-left: 1px solid rgba(200,151,58,0.3); padding-left: 20px; }
+  .hero-stat:first-child { border-left: none; padding-left: 0; }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 32px; border-radius: 4px;
+    font-weight: 600; font-size: 14px;
+    text-decoration: none; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-primary svg { width: 16px; height: 16px; }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.85);
+    padding: 14px 32px; border-radius: 4px;
+    font-weight: 500; font-size: 14px;
+    text-decoration: none; letter-spacing: 0.03em;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Hero right visual */
+  .hero-visual {
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 45%; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .press-card {
+    position: absolute;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,151,58,0.2);
+    border-radius: 8px;
+    padding: 20px 24px;
+    backdrop-filter: blur(4px);
+    animation: float-card ease-in-out infinite alternate;
+  }
+  .press-card h4 { color: var(--gold); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 6px; }
+  .press-card p { color: rgba(255,255,255,0.7); font-size: 13px; }
+  .press-card .speed { color: var(--teal-light); font-weight: 600; font-size: 18px; font-family: 'Playfair Display', serif; }
+  .press-card-1 { top: 20%; right: 60px; width: 200px; animation-duration: 4s; }
+  .press-card-2 { top: 45%; right: 180px; width: 220px; animation-duration: 5s; animation-delay: -2s; }
+  .press-card-3 { top: 65%; right: 50px; width: 190px; animation-duration: 6s; animation-delay: -1s; }
+  @keyframes float-card {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-12px); }
+  }
+  .ink-ring {
+    position: absolute; border-radius: 50%; border: 1px solid rgba(200,151,58,0.15);
+    animation: ring-expand 4s ease-out infinite;
+  }
+  .ink-ring:nth-child(1) { width: 200px; height: 200px; right: 120px; top: 30%; animation-delay: 0s; }
+  .ink-ring:nth-child(2) { width: 340px; height: 340px; right: 50px; top: 20%; animation-delay: 1.3s; }
+  .ink-ring:nth-child(3) { width: 480px; height: 480px; right: -20px; top: 10%; animation-delay: 2.6s; }
+  @keyframes ring-expand {
+    0% { opacity: 0.8; transform: scale(0.8); }
+    100% { opacity: 0; transform: scale(1.1); }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 48px; }
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    color: #5A6B80; font-size: 16px; line-height: 1.7; max-width: 560px;
+    margin-bottom: 56px;
+  }
+
+  /* ── MACHINES ── */
+  #machines {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  #machines .section-title { color: var(--white); }
+  #machines .section-sub { color: rgba(255,255,255,0.5); }
+  #machines .section-eyebrow { color: var(--gold); }
+
+  .machines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(200,151,58,0.15);
+    border: 1px solid rgba(200,151,58,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .machine-card {
+    background: rgba(18,35,64,0.8);
+    padding: 36px 28px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .machine-card:hover { background: rgba(28,53,96,0.9); }
+  .machine-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px; font-weight: 900;
+    color: rgba(200,151,58,0.12);
+    position: absolute; top: 16px; right: 24px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .machine-origin-flag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,58,0.1);
+    border: 1px solid rgba(200,151,58,0.2);
+    color: var(--gold);
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px; border-radius: 2px;
+    margin-bottom: 16px;
+  }
+  .machine-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--white);
+    margin-bottom: 8px; line-height: 1.2;
+  }
+  .machine-type { color: rgba(255,255,255,0.45); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+  .machine-speed-row {
+    display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px;
+  }
+  .machine-speed-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 900; color: var(--teal-light);
+    line-height: 1;
+  }
+  .machine-speed-unit { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .machine-speed-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .machine-qty {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(200,151,58,0.15);
+    padding-top: 14px; width: 100%;
+  }
+  .machine-qty-dot {
+    display: flex; gap: 3px;
+  }
+  .machine-qty-dot span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal-light);
+    opacity: 0.7;
+  }
+
+  /* ── CAPABILITIES ── */
+  #capabilities { background: var(--cream); }
+  .cap-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .cap-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 32px 28px;
+    position: relative; overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .cap-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .cap-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .cap-card:hover::before { transform: scaleX(1); }
+  .cap-icon {
+    width: 48px; height: 48px;
+    background: var(--gold-pale);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .cap-title { font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .cap-desc { font-size: 13px; color: #6B7A8D; line-height: 1.65; }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--navy-mid); }
+  #products .section-title { color: var(--white); }
+  #products .section-sub { color: rgba(255,255,255,0.45); }
+  #products .section-eyebrow { color: var(--gold); }
+
+  .products-tape {
+    display: flex; gap: 24px; overflow-x: auto;
+    padding-bottom: 20px; scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .products-tape::-webkit-scrollbar { display: none; }
+  .product-card {
+    min-width: 260px; scroll-snap-align: start;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,151,58,0.18);
+    border-radius: 8px; overflow: hidden;
+    flex-shrink: 0;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .product-card:hover { border-color: var(--gold); transform: translateY(-6px); }
+  .product-thumb {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.2);
+    position: relative; overflow: hidden;
+  }
+  .product-thumb-label {
+    position: absolute; bottom: 8px; right: 8px;
+    background: rgba(200,151,58,0.9); color: var(--navy);
+    font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+  }
+  .product-info { padding: 20px; }
+  .product-name { color: var(--white); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .product-type { color: rgba(255,255,255,0.4); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'DM Mono', monospace; }
+
+  /* SVG product illustrations */
+  .prod-svg { width: 160px; height: 120px; }
+
+  /* ── PROCESS ── */
+  #process { background: var(--cream-dark); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 0; position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px; left: 10%; right: 10%;
+    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .process-step { text-align: center; padding: 0 12px; position: relative; }
+  .process-step-dot {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; position: relative; z-index: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 900; color: var(--gold);
+    transition: background 0.2s, color 0.2s;
+  }
+  .process-step:hover .process-step-dot { background: var(--gold); color: var(--white); }
+  .process-step-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .process-step-desc { font-size: 12px; color: #6B7A8D; line-height: 1.55; }
+
+  /* ── WHY US ── */
+  #why { background: var(--white); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .why-left .big-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px; font-weight: 900;
+    color: var(--gold-pale);
+    line-height: 1; margin-bottom: -20px;
+  }
+  .why-items { display: flex; flex-direction: column; gap: 24px; }
+  .why-item { display: flex; gap: 16px; }
+  .why-item-icon {
+    flex-shrink: 0; width: 40px; height: 40px;
+    background: var(--navy); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 18px;
+  }
+  .why-item-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .why-item-desc { font-size: 13px; color: #6B7A8D; line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    text-align: center;
+  }
+  #contact .section-title { color: var(--white); max-width: 600px; margin: 0 auto 16px; }
+  #contact .section-sub { color: rgba(255,255,255,0.5); text-align: center; margin: 0 auto 48px; }
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; max-width: 840px; margin: 0 auto;
+    background: rgba(200,151,58,0.1);
+    border: 1px solid rgba(200,151,58,0.15);
+    border-radius: 8px; overflow: hidden;
+  }
+  .contact-item {
+    background: rgba(11,26,46,0.9);
+    padding: 36px 24px; text-align: center;
+    transition: background 0.2s;
+  }
+  .contact-item:hover { background: rgba(28,53,96,0.8); }
+  .contact-icon {
+    font-size: 28px; margin-bottom: 12px;
+    display: block;
+  }
+  .contact-label { font-size: 11px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Mono', monospace; margin-bottom: 8px; }
+  .contact-value { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060E1A;
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(200,151,58,0.1);
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 16px; font-weight: 700;
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: 12px; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.4); font-size: 12px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--gold);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex; gap: 48px;
+    animation: ticker-scroll 20s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--navy); font-weight: 500;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--navy); opacity: 0.4; }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav ul { display: none; }
+    section { padding: 60px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-visual { display: none; }
+    .machines-grid { grid-template-columns: 1fr; }
+    .cap-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .process-steps::before { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .cap-grid { grid-template-columns: 1fr; }
+    nav { padding: 16px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="nav-brand">Print<span>Craft</span> BD</div>
+  </div>
+  <ul>
+    <li><a href="#machines">Machines</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-ink-blob"></div>
+  <div class="hero-ink-blob"></div>
+  <div class="cmyk-dots" id="cmyk-dots"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Printing &amp; Packaging · Dhaka, Bangladesh</div>
+    <h1 class="hero-title">
+      Precision <span class="accent">Printing</span>
+      <span class="line-2">Remarkable Packaging</span>
+    </h1>
+    <p class="hero-sub">
+      Industrial-grade offset printing with Heidelberg and Hashimoto presses — delivering flawless labels, boxes, bags, and packaging at scale.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">12K</div>
+        <div class="hero-stat-label">Sheets/Hour</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Offset Presses</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5+</div>
+        <div class="hero-stat-label">Finishing Lines</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Get a Quote
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="#products" class="btn-ghost">See Our Work</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="ink-ring"></div>
+    <div class="ink-ring"></div>
+    <div class="ink-ring"></div>
+    <div class="press-card press-card-1">
+      <h4>🇩🇪 Heidelberg Sorz</h4>
+      <p>2-Color Offset Press</p>
+      <div class="speed">12,000</div>
+      <p style="color:rgba(255,255,255,0.4);font-size:11px;">sheets per hour</p>
+    </div>
+    <div class="press-card press-card-2">
+      <h4>🇯🇵 Hashimoto F521 ×3</h4>
+      <p>Japanese Precision Press</p>
+      <div class="speed">8,000</div>
+      <p style="color:rgba(255,255,255,0.4);font-size:11px;">sheets per hour each</p>
+    </div>
+    <div class="press-card press-card-3">
+      <h4>🇩🇪 Heidelberg Single Color</h4>
+      <p>High-Speed Mono Press</p>
+      <div class="speed">12,000</div>
+      <p style="color:rgba(255,255,255,0.4);font-size:11px;">sheets per hour</p>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">Offset Printing<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Die Cutting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Lamination<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Packaging Boxes<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Product Labels<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Carry Bags<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Heidelberg Presses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Hashimoto Presses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">12,000 Sheets/Hour<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Offset Printing<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Die Cutting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Lamination<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Packaging Boxes<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Product Labels<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Carry Bags<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Heidelberg Presses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Hashimoto Presses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">12,000 Sheets/Hour<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- MACHINES -->
+<section id="machines">
+  <div class="section-eyebrow reveal">Our Fleet</div>
+  <h2 class="section-title reveal reveal-delay-1">Industrial-Grade<br>Printing Machines</h2>
+  <p class="section-sub reveal reveal-delay-2">Powered by the world's finest offset presses from Germany and Japan — engineered for precision, speed, and consistent quality at volume.</p>
+
+  <div class="machines-grid reveal reveal-delay-3">
+    <div class="machine-card">
+      <div class="machine-num">01</div>
+      <div class="machine-origin-flag">🇩🇪 German Engineering</div>
+      <div class="machine-name">Heidelberg Sorz</div>
+      <div class="machine-type">Two-Color Offset Press</div>
+      <div class="machine-speed-row">
+        <span class="machine-speed-num">12,000</span>
+      </div>
+      <div class="machine-speed-label">sheets per hour</div>
+      <div class="machine-qty">
+        <div class="machine-qty-dot"><span></span></div>
+        1 unit
+      </div>
+    </div>
+    <div class="machine-card">
+      <div class="machine-num">02</div>
+      <div class="machine-origin-flag">🇩🇪 German Engineering</div>
+      <div class="machine-name">Heidelberg Single Color</div>
+      <div class="machine-type">Single-Color Offset Press</div>
+      <div class="machine-speed-row">
+        <span class="machine-speed-num">12,000</span>
+      </div>
+      <div class="machine-speed-label">sheets per hour</div>
+      <div class="machine-qty">
+        <div class="machine-qty-dot"><span></span></div>
+        1 unit
+      </div>
+    </div>
+    <div class="machine-card">
+      <div class="machine-num">03</div>
+      <div class="machine-origin-flag">🇯🇵 Japanese Precision</div>
+      <div class="machine-name">Hashimoto F521</div>
+      <div class="machine-type">High-Speed Offset Press</div>
+      <div class="machine-speed-row">
+        <span class="machine-speed-num">8,000</span>
+      </div>
+      <div class="machine-speed-label">sheets per hour · each</div>
+      <div class="machine-qty">
+        <div class="machine-qty-dot"><span></span><span></span><span></span></div>
+        3 units
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="section-eyebrow reveal">What We Do</div>
+  <h2 class="section-title reveal reveal-delay-1">End-to-End Printing<br>&amp; Packaging Solutions</h2>
+  <p class="section-sub reveal reveal-delay-2">From first print to finished product — our facility handles every stage of production under one roof.</p>
+
+  <div class="cap-grid">
+    <div class="cap-card reveal reveal-delay-1">
+      <div class="cap-icon">🖨️</div>
+      <div class="cap-title">Offset Printing</div>
+      <p class="cap-desc">Multi-color, high-fidelity printing using Heidelberg and Hashimoto presses. Sharp registration, vibrant inks, and consistent quality across large runs.</p>
+    </div>
+    <div class="cap-card reveal reveal-delay-2">
+      <div class="cap-icon">📦</div>
+      <div class="cap-title">Packaging Boxes</div>
+      <p class="cap-desc">Custom-designed folding cartons and rigid boxes for panjabis, creams, coils, electronics, and consumer goods — with precise die-cutting and scoring.</p>
+    </div>
+    <div class="cap-card reveal reveal-delay-3">
+      <div class="cap-icon">🏷️</div>
+      <div class="cap-title">Product Labels</div>
+      <p class="cap-desc">Dedicated label printing for agricultural chemicals, cosmetics, food products, and pharmaceuticals — including Bengali and bilingual artwork.</p>
+    </div>
+    <div class="cap-card reveal reveal-delay-1">
+      <div class="cap-icon">✂️</div>
+      <div class="cap-title">Die Cutting</div>
+      <p class="cap-desc">Three dedicated die-cutting machines for precise shape cutting, creasing, and perforation — turning printed sheets into production-ready packaging blanks.</p>
+    </div>
+    <div class="cap-card reveal reveal-delay-2">
+      <div class="cap-icon">✨</div>
+      <div class="cap-title">Lamination</div>
+      <p class="cap-desc">Gloss, matte, and soft-touch lamination finishes that protect print surfaces and elevate the perceived quality of your packaging.</p>
+    </div>
+    <div class="cap-card reveal reveal-delay-3">
+      <div class="cap-icon">🛍️</div>
+      <div class="cap-title">Carry Bags &amp; Branding</div>
+      <p class="cap-desc">Printed carry bags, retail bags, and branded packaging for restaurants, fashion outlets, and FMCG brands — ready for delivery or export.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-eyebrow reveal">Our Output</div>
+  <h2 class="section-title reveal reveal-delay-1">Products We Print<br>&amp; Package</h2>
+  <p class="section-sub reveal reveal-delay-2">A sample of packaging, labels, and printed materials produced on our floor.</p>
+
+  <div class="products-tape reveal reveal-delay-3">
+    <!-- Product 1: Panjabi Box -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#005f6b,#003d4a);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="15" width="120" height="90" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(200,151,58,0.6)" stroke-width="1"/>
+          <rect x="30" y="25" width="100" height="70" rx="3" fill="rgba(0,180,140,0.2)"/>
+          <ellipse cx="80" cy="52" rx="22" ry="28" fill="none" stroke="#C8973A" stroke-width="1.5"/>
+          <text x="80" y="84" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="serif">আল-ফারুক পাঞ্জাবি</text>
+          <text x="80" y="94" text-anchor="middle" fill="rgba(200,151,58,0.8)" font-size="7" font-family="sans-serif">AL-FARUQUE PANJABI</text>
+        </svg>
+        <div class="product-thumb-label">Box</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Panjabi Garment Box</div>
+        <div class="product-type">Folding Carton · Teal &amp; Gold</div>
+      </div>
+    </div>
+
+    <!-- Product 2: Mosquito Coil Box -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#1a5c2e,#0d3a1a);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="10" width="130" height="100" rx="4" fill="rgba(255,255,255,0.06)" stroke="rgba(100,200,100,0.5)" stroke-width="1"/>
+          <circle cx="80" cy="55" r="30" fill="none" stroke="#2ecc71" stroke-width="2"/>
+          <circle cx="80" cy="55" r="20" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+          <circle cx="80" cy="55" r="10" fill="none" stroke="#1a8a4a" stroke-width="1"/>
+          <text x="80" y="100" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="bold">A to Z Mosquito Coil</text>
+        </svg>
+        <div class="product-thumb-label">Box</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Mosquito Coil Box</div>
+        <div class="product-type">Consumer Packaging · FMCG</div>
+      </div>
+    </div>
+
+    <!-- Product 3: Cream Box -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#0a5c4a,#063d30);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="15" width="80" height="90" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <rect x="44" y="19" width="72" height="82" rx="4" fill="rgba(29,170,147,0.3)"/>
+          <text x="80" y="55" text-anchor="middle" fill="white" font-size="12" font-family="serif" font-weight="bold">Elite</text>
+          <text x="80" y="68" text-anchor="middle" fill="rgba(200,151,58,0.9)" font-size="9" font-family="sans-serif" font-weight="bold">CRACK GUARD</text>
+          <text x="80" y="80" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="7" font-family="sans-serif">Smooth Petroleum Jelly</text>
+          <text x="80" y="94" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">30gm</text>
+        </svg>
+        <div class="product-thumb-label">Carton</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Elite Crack Guard</div>
+        <div class="product-type">Pharmaceutical Carton</div>
+      </div>
+    </div>
+
+    <!-- Product 4: Hair Color Box -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#1a1a2e,#16213e);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="35" y="12" width="90" height="96" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(200,151,58,0.5)" stroke-width="1"/>
+          <rect x="40" y="17" width="80" height="86" rx="3" fill="rgba(20,20,40,0.6)"/>
+          <text x="80" y="45" text-anchor="middle" fill="white" font-size="11" font-family="serif" font-style="italic">Élite</text>
+          <text x="80" y="56" text-anchor="middle" fill="rgba(200,151,58,0.9)" font-size="8" font-family="sans-serif">SPECIAL</text>
+          <text x="80" y="68" text-anchor="middle" fill="white" font-size="12" font-family="serif" font-style="italic" font-weight="bold">Speedy™</text>
+          <rect x="46" y="74" width="68" height="14" rx="2" fill="rgba(200,151,58,0.2)" stroke="rgba(200,151,58,0.4)" stroke-width="0.5"/>
+          <text x="80" y="84" text-anchor="middle" fill="rgba(200,151,58,0.9)" font-size="7" font-family="sans-serif">AMMONIA FREE</text>
+          <text x="80" y="98" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">Hair Color Cream</text>
+        </svg>
+        <div class="product-thumb-label">Box</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Hair Color Carton</div>
+        <div class="product-type">Cosmetics Packaging</div>
+      </div>
+    </div>
+
+    <!-- Product 5: Carry Bag -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#2c2c2c,#1a1a1a);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <line x1="55" y1="15" x2="40" y2="30" stroke="rgba(200,151,58,0.6)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="105" y1="15" x2="120" y2="30" stroke="rgba(200,151,58,0.6)" stroke-width="2" stroke-linecap="round"/>
+          <rect x="25" y="28" width="110" height="82" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <rect x="30" y="33" width="100" height="72" rx="3" fill="rgba(40,40,40,0.8)"/>
+          <text x="80" y="64" text-anchor="middle" fill="white" font-size="9" font-family="serif" font-weight="bold">SHAHI KORMA</text>
+          <text x="80" y="75" text-anchor="middle" fill="rgba(200,151,58,0.9)" font-size="7" font-family="sans-serif">PIZZA N CURRY</text>
+          <text x="80" y="88" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="6" font-family="sans-serif">Rochester NY · USA</text>
+        </svg>
+        <div class="product-thumb-label">Carry Bag</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Restaurant Carry Bag</div>
+        <div class="product-type">Retail Packaging · Export</div>
+      </div>
+    </div>
+
+    <!-- Product 6: Labels -->
+    <div class="product-card">
+      <div class="product-thumb" style="background: linear-gradient(135deg,#2a4a1a,#1a2e0a);">
+        <svg class="prod-svg" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="18" width="55" height="84" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(100,200,60,0.4)" stroke-width="1"/>
+          <rect x="15" y="22" width="45" height="74" rx="3" fill="rgba(50,120,20,0.3)"/>
+          <text x="37" y="60" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif" font-weight="bold">SP</text>
+          <rect x="72" y="18" width="80" height="40" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(100,200,60,0.4)" stroke-width="1"/>
+          <rect x="76" y="22" width="72" height="32" rx="3" fill="rgba(40,100,15,0.3)"/>
+          <text x="112" y="42" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7" font-family="sans-serif">Agricultural Label</text>
+          <rect x="72" y="62" width="80" height="40" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(100,200,60,0.4)" stroke-width="1"/>
+          <rect x="76" y="66" width="72" height="32" rx="3" fill="rgba(180,80,10,0.3)"/>
+          <text x="112" y="86" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7" font-family="sans-serif">THUNDER 10EC</text>
+        </svg>
+        <div class="product-thumb-label">Labels</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Agricultural Labels</div>
+        <div class="product-type">Pesticide &amp; Agri Sector</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-eyebrow reveal" style="text-align:center;">How It Works</div>
+  <h2 class="section-title reveal reveal-delay-1" style="text-align:center; margin:0 auto 12px;">From Artwork to Delivery</h2>
+  <p class="section-sub reveal reveal-delay-2" style="text-align:center; margin:0 auto 64px;">Our streamlined production workflow ensures quality at every stage.</p>
+
+  <div class="process-steps">
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-step-dot">1</div>
+      <div class="process-step-title">Artwork & Prepress</div>
+      <p class="process-step-desc">Receive design files, prepare plates, proof colors and alignment.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-step-dot">2</div>
+      <div class="process-step-title">Offset Printing</div>
+      <p class="process-step-desc">Print on Heidelberg or Hashimoto press at up to 12,000 sheets/hour.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-step-dot">3</div>
+      <div class="process-step-title">Lamination</div>
+      <p class="process-step-desc">Apply gloss, matte, or soft-touch laminate to protect and enhance.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-4">
+      <div class="process-step-dot">4</div>
+      <div class="process-step-title">Die Cutting</div>
+      <p class="process-step-desc">Cut, crease, and score printed sheets into perfect packaging shapes.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-5">
+      <div class="process-step-dot">5</div>
+      <div class="process-step-title">QC & Delivery</div>
+      <p class="process-step-desc">Quality check, count, pack, and deliver on schedule to your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div class="why-left reveal">
+      <div class="big-number">15+</div>
+      <div class="section-eyebrow" style="margin-top:8px;">Years of Experience</div>
+      <h2 class="section-title" style="margin-top:8px;">Why Clients Trust<br>Our Presses</h2>
+      <p class="section-sub">We combine German and Japanese machine precision with Bangladeshi expertise and speed to deliver packaging that elevates your brand.</p>
+    </div>
+    <div class="why-items reveal reveal-delay-2">
+      <div class="why-item">
+        <div class="why-item-icon">⚡</div>
+        <div>
+          <div class="why-item-title">High-Speed Production</div>
+          <p class="why-item-desc">Up to 12,000 sheets per hour across our press fleet — shorter lead times, faster market delivery.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">🎯</div>
+        <div>
+          <div class="why-item-title">Precision Color Accuracy</div>
+          <p class="why-item-desc">Heidelberg engineering ensures tight registration and color consistency across every print run.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">🏭</div>
+        <div>
+          <div class="why-item-title">Full In-House Capability</div>
+          <p class="why-item-desc">Printing, lamination, die-cutting, and label printing — all under one roof, no outsourcing delays.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item-icon">🌏</div>
+        <div>
+          <div class="why-item-title">Local &amp; Export Ready</div>
+          <p class="why-item-desc">We serve local brands across Bangladesh and produce export-quality packaging for international clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow" style="text-align:center;">Get In Touch</div>
+  <h2 class="section-title reveal">Ready to Print<br>Something Great?</h2>
+  <p class="section-sub reveal reveal-delay-1">Tell us about your project and we'll get back to you with a quote within 24 hours.</p>
+
+  <div class="contact-grid reveal reveal-delay-2">
+    <div class="contact-item">
+      <span class="contact-icon">📍</span>
+      <div class="contact-label">Location</div>
+      <div class="contact-value">Dhaka, Bangladesh</div>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📞</span>
+      <div class="contact-label">Call Us</div>
+      <div class="contact-value">+880 — — — — — — —<br><span style="font-size:11px;opacity:0.5;">Available 9AM – 6PM</span></div>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">✉️</span>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">info@printcraftbd.com<br><span style="font-size:11px;opacity:0.5;">Quick Quote Requests</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;" class="reveal reveal-delay-3">
+    <a href="mailto:info@printcraftbd.com" class="btn-primary" style="display:inline-flex;">
+      Send Us a Message
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Print<span>Craft</span> BD</div>
+  <div class="footer-copy">© 2025 PrintCraft BD. Dhaka, Bangladesh.</div>
+  <div class="footer-links">
+    <a href="#machines">Machines</a>
+    <a href="#capabilities">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // CMYK floating dots
+  const dotsContainer = document.getElementById('cmyk-dots');
+  const colors = ['#00B4D8','#EF476F','#FFD166','#06D6A0','#7B2D8B'];
+  function createDot() {
+    const dot = document.createElement('div');
+    dot.className = 'cmyk-dot';
+    const size = Math.random() * 10 + 4;
+    dot.style.cssText = `
+      width: ${size}px; height: ${size}px;
+      left: ${Math.random() * 100}%;
+      background: ${colors[Math.floor(Math.random() * colors.length)]};
+      animation-duration: ${Math.random() * 8 + 6}s;
+      animation-delay: ${Math.random() * 6}s;
+      border-radius: 50%;
+    `;
+    dotsContainer.appendChild(dot);
+    setTimeout(() => dot.remove(), 14000);
+  }
+  for (let i = 0; i < 20; i++) createDot();
+  setInterval(createDot, 600);
+
+  // Counter animation for hero stats
+  function animateCount(el, target, suffix) {
+    let start = 0;
+    const step = target / 40;
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + suffix; clearInterval(timer); return; }
+      el.textContent = Math.floor(start) + suffix;
+    }, 40);
+  }
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--gold)' : '';
+    });
+  });
+
+  // Make hero stats visible immediately
+  document.querySelectorAll('.hero-content .reveal').forEach(el => {
+    el.classList.add('visible');
+  });
+</script>
+</body>
+</html>

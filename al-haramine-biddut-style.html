@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       Al Haramine Printing & Packaging | Premium Label, Hangtag & Carton Press —
-      Rajshahi
+      Dhaka
     </title>
     <meta
       name="description"
-      content="Al Haramine Printing & Packaging — Bangladesh's trusted label, hangtag, carton and stationery press based in Mohammadpur, Rajshahi. CMYK printing, in-house die-cutting and finishing."
+      content="Al Haramine Printing & Packaging — Bangladesh's trusted label, hangtag, carton and stationery press based in Kotowali, Dhaka. CMYK printing, in-house die-cutting and finishing."
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -79,7 +79,8 @@
       /* halftone texture for hero (printing motif, replaces stock photo) */
       .halftone {
         background-image:
-
+          radial-gradient(rgba(227, 28, 130, 0.35) 1px, transparent 1.4px),
+          radial-gradient(rgba(0, 167, 206, 0.3) 1px, transparent 1.4px);
         background-size:
           14px 14px,
           14px 14px;
@@ -203,16 +204,15 @@
     </style>
   </head>
   <body class="antialiased">
-    <!-- ============ NAV ============ -->
     <header
-      class="fixed top-0 inset-x-0 z-40 bg-[#0A0D14]/85 backdrop-blur border-b border-white/5"
+      class="fixed top-0 inset-x-0 z-40 backdrop-blur border-b border-white/5"
     >
       <div
         class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between"
       >
         <a href="#top" class="flex items-center gap-2.5">
           <img
-            src="data:image/png;base64,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"
+            src="./Logo.png"
             alt="Al Haramine logo"
             class="h-8 md:h-9 w-auto rounded bg-white/5 p-0.5"
           />
@@ -248,7 +248,21 @@
           aria-expanded="false"
           class="md:hidden w-10 h-10 grid place-items-center text-white"
         >
-          <span class="reg-mark text-[22px]"></span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
       <div
@@ -264,7 +278,6 @@
       </div>
     </header>
 
-    <!-- ============ HERO ============ -->
     <section
       id="top"
       class="relative pt-28 md:pt-36 pb-0 hero-bg overflow-hidden"
@@ -274,8 +287,22 @@
         <span
           class="reveal in inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 text-[12.5px] font-medium text-[var(--gold)] mb-7"
         >
-          <span class="reg-mark text-[12px]"></span> Bangladesh's Trusted
-          Printing &amp; Packaging Partner
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+            ></polygon>
+          </svg>
+          Bangladesh's Trusted Printing &amp; Packaging Partner
         </span>
 
         <h1
@@ -293,14 +320,27 @@
           finishing.
         </p>
         <p class="font-bn text-white/55 text-[14.5px] mt-2">
-          মোহাম্মদপুর, রাজশাহী থেকে সারাদেশে সরবরাহ
+          জিন্দাবাহার, ঢাকা থেকে সারাদেশে সরবরাহ
         </p>
 
         <p
           class="mt-4 text-[13px] text-white/45 flex items-center justify-center gap-1.5"
         >
-          <span class="reg-mark text-[12px] text-[var(--gold)]"></span>
-          Mohammadpur, Rajshahi, Bangladesh
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="var(--gold)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          2/1, Zindabahar, 2ND Lane, Kotowali Dhaka-1100
         </p>
 
         <div
@@ -319,7 +359,6 @@
         </div>
       </div>
 
-      <!-- stats bar -->
       <div class="grad-bar relative">
         <div
           class="max-w-7xl mx-auto px-5 md:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
@@ -376,7 +415,6 @@
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
     <section id="about" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
       <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-start">
         <div class="reveal">
@@ -396,11 +434,10 @@
             <span class="font-semibold text-white"
               >Al Haramine Printing &amp; Packaging</span
             >
-            is a leading press based in Mohammadpur, Rajshahi, specializing in
-            premium labels, hangtags, cartons and agro-product packaging. Built
-            on accurate colour, sharp die-cutting and on-time delivery, our
-            press serves agro-chemical, FMCG and consumer brands across
-            Bangladesh.
+            is a leading press based in Kotowali, Dhaka, specializing in premium
+            labels, hangtags, cartons and agro-product packaging. Built on
+            accurate colour, sharp die-cutting and on-time delivery, our press
+            serves agro-chemical, FMCG and consumer brands across Bangladesh.
           </p>
           <p class="mt-4 text-[15px] text-white/75 leading-relaxed">
             From colour separation to die-cutting, every job is proofed in-house
@@ -409,27 +446,111 @@
 
           <div class="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-8 text-[14px]">
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--gold)] text-[13px]"></span>
+              <svg
+                class="text-[var(--gold)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
               Custom CMYK Printing
             </p>
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--cyan)] text-[13px]"></span> Foil
-              &amp; Spot UV Finishing
+              <svg
+                class="text-[var(--cyan)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Foil &amp; Spot UV Finishing
             </p>
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--magenta)] text-[13px]"></span>
+              <svg
+                class="text-[var(--magenta)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
               Bulk Manufacturing
             </p>
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--gold)] text-[13px]"></span> Fast
-              Nationwide Delivery
+              <svg
+                class="text-[var(--gold)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Fast Nationwide Delivery
             </p>
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--cyan)] text-[13px]"></span>
+              <svg
+                class="text-[var(--cyan)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
               In-House Die-Cutting
             </p>
             <p class="flex items-center gap-2 text-white/80">
-              <span class="reg-mark text-[var(--magenta)] text-[13px]"></span>
+              <svg
+                class="text-[var(--magenta)]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
               Affordable Pricing
             </p>
           </div>
@@ -442,10 +563,14 @@
             <div
               class="w-14 h-14 rounded-full grad-bar flex items-center justify-center font-head font-extrabold text-[#1a0a12] text-[18px] shrink-0"
             >
-              AH
+              <img
+                src="./OwnerImg.jpg"
+                alt="Md Kutub Uddin"
+                class="w-full h-full object-cover rounded-full"
+              />
             </div>
             <div>
-              <p class="font-head font-bold text-[17px]">[ Owner Name ]</p>
+              <p class="font-head font-bold text-[17px]">Md Kutub Uddin</p>
               <p class="text-[var(--gold)] text-[12.5px] font-medium">
                 Founder &amp; Managing Director
               </p>
@@ -453,7 +578,7 @@
           </div>
           <p class="mt-5 text-[13.5px] text-white/65 leading-relaxed">
             With over two decades on the press floor, our founder has built Al
-            Haramine into one of Rajshahi's most trusted label and packaging
+            Haramine into one of Dhaka's most trusted label and packaging
             manufacturers — combining traditional craftsmanship with modern CMYK
             production.
           </p>
@@ -462,25 +587,53 @@
             class="mt-6 pt-5 border-t border-white/10 space-y-3 text-[13.5px] text-white/70"
           >
             <p class="flex items-start gap-2.5">
-              <span
-                class="reg-mark text-[var(--gold)] text-[13px] mt-0.5 shrink-0"
-              ></span>
+              <svg
+                class="text-[var(--gold)] shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
               Business Address<br /><span class="text-white/50"
-                >Mohammadpur, Rajshahi Division, Bangladesh</span
+                >2/1, Zindabahar, 2ND Lane, Kotowali Dhaka-1100</span
               >
             </p>
             <p class="flex items-center gap-2.5">
-              <span
-                class="reg-mark text-[var(--cyan)] text-[13px] shrink-0"
-              ></span>
-              +880 1XXX-XXXXXX
+              <svg
+                class="text-[var(--cyan)] shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <a
+                href="tel:+8801788820077"
+                class="text-white/50 hover:text-white transition-colors"
+                >+880 1788 820 077</a
+              >
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ PRODUCTS ============ -->
     <section id="products" class="px-5 md:px-8 py-20 md:py-28">
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
@@ -704,7 +857,6 @@
       </div>
     </section>
 
-    <!-- ============ WHY CHOOSE US ============ -->
     <section id="why" class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]">
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
@@ -728,9 +880,21 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--gold)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Fast Production
             </h3>
@@ -742,9 +906,22 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--cyan)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Colour Guaranteed
             </h3>
@@ -756,9 +933,23 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--magenta)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Nationwide Delivery
             </h3>
@@ -770,9 +961,23 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--gold)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--gold)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Custom Design
             </h3>
@@ -784,9 +989,23 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--cyan)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--cyan)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+              ></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Bulk Discounts
             </h3>
@@ -798,9 +1017,22 @@
           <div
             class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-6 card-hover"
           >
-            <span
-              class="reg-mark text-[var(--magenta)] text-[20px] mb-3 inline-block"
-            ></span>
+            <svg
+              class="text-[var(--magenta)] mb-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
             <h3 class="font-head font-bold text-[15.5px] mb-1.5">
               Responsive Support
             </h3>
@@ -812,9 +1044,8 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============ -->
     <section class="px-5 md:px-8 py-20 md:py-28">
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-6xl mx-auto text-center">
         <p
           class="font-head text-[12.5px] font-bold tracking-[0.18em] uppercase text-[var(--gold)] mb-3 reveal"
         >
@@ -826,35 +1057,94 @@
           What Our <span class="grad-text">Clients Say</span>
         </h2>
 
-        <div
-          class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-9 md:p-12"
-        >
-          <div class="text-[var(--gold)] text-[18px] tracking-wider mb-5">
-            ★★★★★
-          </div>
-          <p
-            class="font-head italic text-[16px] md:text-[18px] text-white/85 leading-relaxed"
-          >
-            "We get pesticide pouch labels printed every season — the colour
-            match is spot on and delivery is always on time."
-          </p>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
           <div
-            class="mt-7 w-12 h-12 rounded-full grad-bar mx-auto flex items-center justify-center font-head font-bold text-[#1a0a12] text-[14px]"
+            class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-8 card-hover flex flex-col h-full"
           >
-            PL
+            <div class="text-[var(--gold)] text-[18px] tracking-wider mb-4">
+              ★★★★★
+            </div>
+            <p
+              class="font-head italic text-[15px] text-white/85 leading-relaxed flex-grow"
+            >
+              "Excellent quality hangtags and care labels for our garments. The
+              die-cutting is perfect and they always meet our tight delivery
+              deadlines."
+            </p>
+            <div
+              class="mt-6 w-16 h-16 rounded-full border border-white/10 mx-auto overflow-hidden bg-white/5 flex items-center justify-center p-1"
+            >
+              <img
+                src="./Al-Faruque-Logo.jpg"
+                alt="Al-Faruque Fashion Logo"
+                class="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <p class="font-head font-semibold text-[14.5px] mt-3">
+              Sourcing Manager
+            </p>
+            <p class="text-[12.5px] text-white/50">Al-Faruque Fashion</p>
           </div>
-          <p class="font-head font-semibold text-[14.5px] mt-3">
-            Procurement Lead
-          </p>
-          <p class="text-[12.5px] text-white/50">Agro Distribution Company</p>
-        </div>
-        <div class="dots mt-6">
-          <span class="active"></span><span></span><span></span>
+
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-8 card-hover flex flex-col h-full"
+          >
+            <div class="text-[var(--gold)] text-[18px] tracking-wider mb-4">
+              ★★★★★
+            </div>
+            <p
+              class="font-head italic text-[15px] text-white/85 leading-relaxed flex-grow"
+            >
+              "We get pesticide pouch labels printed every season — the CMYK
+              colour match is spot on and the UV finishing gives our products a
+              premium feel."
+            </p>
+            <div
+              class="mt-6 w-16 h-16 rounded-full border border-white/10 mx-auto overflow-hidden bg-white/5 flex items-center justify-center p-1"
+            >
+              <img
+                src="./Ms-Agro-Logo.jpg"
+                alt="Ms Agro Chemical Logo"
+                class="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <p class="font-head font-semibold text-[14.5px] mt-3">
+              Procurement Lead
+            </p>
+            <p class="text-[12.5px] text-white/50">Ms Agro Chemical Co. Ltd.</p>
+          </div>
+
+          <div
+            class="reveal bg-[var(--card)] border border-white/10 rounded-2xl p-8 card-hover flex flex-col h-full"
+          >
+            <div class="text-[var(--gold)] text-[18px] tracking-wider mb-4">
+              ★★★★★
+            </div>
+            <p
+              class="font-head italic text-[15px] text-white/85 leading-relaxed flex-grow"
+            >
+              "Highly recommend Al Haramine for folding cartons. Their bulk
+              manufacturing process and fast nationwide delivery are exactly
+              what our brand needed."
+            </p>
+            <div
+              class="mt-6 w-16 h-16 rounded-full border border-white/10 mx-auto overflow-hidden bg-white/5 flex items-center justify-center p-1"
+            >
+              <img
+                src="./Client3-Logo.jpg"
+                alt="Client Logo"
+                class="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <p class="font-head font-semibold text-[14.5px] mt-3">
+              Managing Director
+            </p>
+            <p class="text-[12.5px] text-white/50">FMCG Retail Brand</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CTA ============ -->
     <section class="grad-bar px-5 md:px-8 py-16 md:py-20">
       <div class="max-w-3xl mx-auto text-center">
         <h2
@@ -870,20 +1160,52 @@
         </p>
         <div class="mt-7 flex flex-wrap items-center justify-center gap-4">
           <a
-            href="tel:+8801XXXXXXXXX"
-            class="px-7 py-3.5 rounded-full bg-[#1a0a12] text-white font-semibold"
-            >📞 Call Us Now</a
+            href="tel:01788820077"
+            class="px-7 py-3.5 rounded-full bg-[#1a0a12] text-white font-semibold flex items-center gap-2"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+            Call Us Now
+          </a>
           <a
             href="#quote"
-            class="px-7 py-3.5 rounded-full bg-white/90 text-[#1a0a12] font-semibold"
-            >✉️ Send Message</a
+            class="px-7 py-3.5 rounded-full bg-white/90 text-[#1a0a12] font-semibold flex items-center gap-2"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Send Message
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT / QUOTE ============ -->
     <section
       id="quote"
       class="px-5 md:px-8 py-20 md:py-28 bg-[var(--bg-2)]"
@@ -912,54 +1234,111 @@
             <div
               class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
             >
-              <span
-                class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"
-              ></span>
+              <svg
+                class="text-[var(--gold)] shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
               <div>
                 <p class="font-head font-semibold text-[14px]">
                   Business Address
                 </p>
                 <p class="text-[13px] text-white/60 mt-0.5">
-                  Mohammadpur, Rajshahi Division, Bangladesh
+                  2/1, Zindabahar, 2ND Lane, Kotowali Dhaka-1100
                 </p>
               </div>
             </div>
             <div
               class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
             >
-              <span
-                class="reg-mark text-[var(--cyan)] text-[18px] mt-0.5 shrink-0"
-              ></span>
+              <svg
+                class="text-[var(--cyan)] shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
               <div>
                 <p class="font-head font-semibold text-[14px]">Owner</p>
                 <p class="text-[13px] text-white/60 mt-0.5">
-                  [ Owner Name ] — Founder &amp; Managing Director
+                  Md Kutub Uddin — Founder &amp; Managing Director
                 </p>
               </div>
             </div>
             <div
               class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
             >
-              <span
-                class="reg-mark text-[var(--magenta)] text-[18px] mt-0.5 shrink-0"
-              ></span>
+              <svg
+                class="text-[var(--magenta)] shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
               <div>
                 <p class="font-head font-semibold text-[14px]">Phone</p>
                 <p class="text-[13px] text-white/60 mt-0.5">
-                  +880 1XXX-XXXXXX · Available 9 AM – 7 PM
+                  <a href="tel:01788820077" class="hover:text-white">
+                    +880 1788 820 077
+                  </a>
+                  · Available 9 AM – 7 PM
                 </p>
               </div>
             </div>
             <div
               class="reveal bg-[var(--card)] border border-white/10 rounded-xl p-5 flex gap-4 items-start"
             >
-              <span
-                class="reg-mark text-[var(--gold)] text-[18px] mt-0.5 shrink-0"
-              ></span>
+              <svg
+                class="text-[var(--gold)] shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
               <div>
                 <p class="font-head font-semibold text-[14px]">Email</p>
                 <p class="text-[13px] text-white/60 mt-0.5">
-                  hello@alharamineprint.com · We reply within 24hrs
+                  <a href="mailto:kutub72@gmail.com" class="hover:text-white">
+                    kutub72@gmail.com
+                  </a>
+                  · We reply within 24hrs
                 </p>
               </div>
             </div>
@@ -1017,7 +1396,7 @@
                     type="tel"
                     required
                     class="w-full rounded-lg border border-white/15 bg-[var(--card-2)] px-4 py-3 text-[14px] text-white placeholder-white/30"
-                    placeholder="+880 1XXX-XXXXXX"
+                    placeholder="017-XXXXXXX"
                   />
                   <p
                     class="error-msg hidden text-[12px] text-[var(--magenta)] mt-1"
@@ -1096,7 +1475,6 @@
       </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
     <footer
       class="px-5 md:px-8 pt-14 pb-8 bg-[var(--bg)] border-t border-white/5"
     >
@@ -1104,9 +1482,9 @@
         <div>
           <div class="flex items-center gap-2.5 mb-3">
             <img
-              src="data:image/png;base64,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"
+              src="./Logo.png"
               alt=""
-              class="h-8 w-auto rounded bg-white/5 p-0.5"
+              class="h-8 w-auto rounded bg-white/10 p-0.5"
             />
             <span class="font-head font-bold text-[15px]"
               >AL HARAMINE <span class="grad-text">PRINTING</span></span
@@ -1121,20 +1499,67 @@
               href="#"
               aria-label="Facebook"
               class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
-              >f</a
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
             <a
               href="#"
               aria-label="Instagram"
               class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
-              >ig</a
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
             <a
-              href="#"
+              href="https://wa.me/8801788820077"
               aria-label="WhatsApp"
               class="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-[12px] hover:bg-white/15"
-              >wa</a
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                ></path>
+              </svg>
+            </a>
           </div>
         </div>
         <div>
@@ -1150,9 +1575,67 @@
         <div>
           <p class="font-head font-bold text-[14px] mb-3">Contact Info</p>
           <ul class="space-y-2 text-[13.5px] text-white/60">
-            <li>Mohammadpur, Rajshahi Division, Bangladesh</li>
-            <li>+880 1XXX-XXXXXX</li>
-            <li>hello@alharamineprint.com</li>
+            <li class="flex items-start gap-2">
+              <svg
+                class="shrink-0 mt-0.5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              2/1, Zindabahar, 2ND Lane, Kotowali Dhaka-1100
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <a href="tel:01788820077" class="hover:text-white"
+                >+880 1788 820 077</a
+              >
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="shrink-0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:kutub72@gmail.com" class="hover:text-white"
+                >kutub72@gmail.com</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -1163,15 +1646,28 @@
       </div>
     </footer>
 
-    <!-- floating whatsapp -->
     <a
-      href="https://wa.me/8801XXXXXXXXX"
+      href="https://wa.me/8801788820077"
       target="_blank"
       rel="noopener"
       aria-label="Chat on WhatsApp"
-      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center text-white text-[24px]"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center text-white transition-transform hover:scale-110"
     >
-      ✆
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+        ></path>
+      </svg>
     </a>
 
     <script>
